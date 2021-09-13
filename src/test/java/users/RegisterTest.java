@@ -2,6 +2,7 @@ package users;
 
 import endpoints.users.UsersEndPoint;
 import models.users.CredentialsSuperModel;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -21,8 +22,10 @@ public class RegisterTest {
     public void registerTest(CredentialsSuperModel credentialsPayload, String schemaJsonPath) {
         usersEndPoint.createUser(credentialsPayload);
 
+        Assert.assertTrue(usersEndPoint.verifyStatusCode(200));
+
         SoftAssert softAssert = new SoftAssert();
-        softAssert.assertTrue(usersEndPoint.verifyStatusCode(200));
+        softAssert.assertTrue(usersEndPoint.getResponseTime() < 8000L);
         softAssert.assertTrue(usersEndPoint.verifySchema(schemaJsonPath));
         softAssert.assertAll();
     }

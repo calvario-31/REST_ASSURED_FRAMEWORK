@@ -11,6 +11,7 @@ import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import models.Model;
 import utilities.Log;
+import utilities.RequestFilter;
 
 import java.io.FileOutputStream;
 import java.io.PrintStream;
@@ -30,6 +31,7 @@ public abstract class EndPoint {
 
     public EndPoint() {
         assignLog();
+        createNewRequest();
     }
 
     public EndPoint(String token) {
@@ -37,8 +39,16 @@ public abstract class EndPoint {
         this.token = token;
     }
 
+    public void setToken(String token) {
+        Log.info("Assigning the token to the header");
+        assignHeader("Authorization", "Token " + token);
+    }
+
     protected void createNewRequest() {
-        request = RestAssured.given().spec(requestSpecification);
+        request = RestAssured
+                .given()
+                .filter(new RequestFilter())
+                .spec(requestSpecification);
     }
 
     protected void assignHeader(String key, String value) {
@@ -47,11 +57,6 @@ public abstract class EndPoint {
 
     protected void assignBodyParameter(Model model) {
         request.body(model);
-    }
-
-    protected void assignToken(){
-        Log.info("Assigning the token to the header");
-        assignHeader("Authorization", "Token " + token);
     }
 
     public boolean verifyStatusCode(int statusCode) {
@@ -76,6 +81,11 @@ public abstract class EndPoint {
             e.printStackTrace();
             return false;
         }
+    }
+
+    public long getResponseTime() {
+        Log.info("Verifying the response time");
+        return response.getTime();
     }
 
     public String getFieldFromResponse(String path) {

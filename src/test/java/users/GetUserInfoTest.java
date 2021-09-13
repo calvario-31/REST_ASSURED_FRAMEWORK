@@ -1,8 +1,6 @@
 package users;
 
 import endpoints.users.UsersEndPoint;
-import models.users.CredentialsSuperModel;
-import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -10,7 +8,7 @@ import org.testng.asserts.SoftAssert;
 
 import static utilities.SchemaReader.getUserSchema;
 
-public class LoginTest {
+public class GetUserInfoTest {
     private UsersEndPoint usersEndPoint;
     private SoftAssert softAssert;
 
@@ -20,12 +18,11 @@ public class LoginTest {
     }
 
     @Test(dataProvider = "credentials data")
-    public void loginTest(CredentialsSuperModel credentialsPayload, String schemaJsonPath) {
-        usersEndPoint.createUser(credentialsPayload);
-        usersEndPoint.loginUser(credentialsPayload);
+    public void getUserInfoTest(String schemaJsonPath) {
+        usersEndPoint.getCurrentUserInfo();
 
-        Assert.assertTrue(usersEndPoint.verifyStatusCode(200));
         softAssert = new SoftAssert();
+        softAssert.assertTrue(usersEndPoint.verifyStatusCode(200));
         softAssert.assertTrue(usersEndPoint.getResponseTime() < 8000L);
         softAssert.assertTrue(usersEndPoint.verifySchema(schemaJsonPath));
         softAssert.assertAll();
@@ -33,12 +30,14 @@ public class LoginTest {
 
     public void initEndPoints() {
         usersEndPoint = new UsersEndPoint();
+        String token = usersEndPoint.generateToken();
+        usersEndPoint.setToken(token);
     }
 
     @DataProvider(name = "credentials data")
-    public Object[][] loginDataProvider() {
+    public Object[][] getUserInfoDataProvider() {
         return new Object[][]{
-                {new CredentialsSuperModel(), getUserSchema()}
+                {getUserSchema()}
         };
     }
 }
