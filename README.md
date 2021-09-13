@@ -1,13 +1,17 @@
 # REST_ASSURED COMPLETE FRAMEWORK
 
-To run all:
+* To run all:
 
-    mvn clean test
+        mvn clean test
 
-To run with tags:
+* To run with tags:
 
-    mvn clean test -DsuiteName=${suiteName}
+        mvn clean test -DsuiteName=${suiteName}
 
-Example:
+* Example:
 
-    mvn clean test -DsuiteName=regression
+        mvn clean test -DsuiteName=regression
+        
+* To see the reports:
+
+        allure serve target/allure-results/
