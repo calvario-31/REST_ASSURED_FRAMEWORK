@@ -18,7 +18,7 @@ public class GetTagsTest extends Base {
         initEndPoints();
     }
 
-    @Test(dataProvider = "get tags data", groups = {"smoke"})
+    @Test(dataProvider = "get tags data", groups = {"smoke", "regression"})
     public void getTagsTest(String schemaJsonPath) {
         tagsEndPoint.getTags();
 
