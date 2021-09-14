@@ -4,9 +4,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Log {
-    public static Logger Log = LogManager.getLogger("[LOG]");
     private static final String separator = "------------------------------------------------------------------------------------------";
-
+    public static Logger Log = LogManager.getLogger("[LOG]");
 
     public static void startTest(String testName) {
         System.out.println();
@@ -28,17 +27,15 @@ public class Log {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder
                 .append(newLine).append(newLine)
-                .append(separator).append(newLine)
                 .append("Request:").append(newLine)
-                .append(separator).append(newLine)
-                .append("Url:\t\t\t").append(url).append(newLine)
+                .append("-------").append(newLine)
+                .append("URL:\t\t\t").append(url).append(newLine)
                 .append("Method:\t\t\t").append(method).append(newLine)
                 .append("Content-Type:   ").append(contentType).append(newLine)
                 .append("Authorization:\t").append(token).append(newLine)
-                .append("Payload: ").append(newLine).append(payload).append(newLine)
-                .append(separator).append(newLine)
+                .append("Payload: ").append(newLine).append(payload).append(newLine).append(newLine)
                 .append("Response:").append(newLine)
-                .append(separator).append(newLine)
+                .append("--------").append(newLine)
                 .append("Status Code:\t").append(statusCode).append(newLine)
                 .append("Response Time:\t").append(time).append(" ms").append(newLine)
                 .append("Response Body:").append(newLine).append(responseBody).append(newLine);

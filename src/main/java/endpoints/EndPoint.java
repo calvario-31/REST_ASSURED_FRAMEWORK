@@ -9,7 +9,6 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import models.Model;
 import utilities.Log;
 import utilities.RequestFilter;
 
@@ -17,17 +16,17 @@ import java.io.FileOutputStream;
 import java.io.PrintStream;
 
 public abstract class EndPoint {
-    protected final String baseUrl = "https://conduit.productionready.io/api";
-    protected RequestSpecification request;
-    protected RequestSpecification requestSpecification;
-    protected Response response;
-    protected JsonPath jsonPath;
-    protected String token;
     protected final String GET = "GET";
     protected final String POST = "POST";
     protected final String PUT = "PUT";
     protected final String PATCH = "PATCH";
     protected final String DELETE = "DELETE";
+    private final String baseUrl = "https://conduit.productionready.io/api";
+    private RequestSpecification request;
+    private RequestSpecification requestSpecification;
+    private Response response;
+    private JsonPath jsonPath;
+    private String token;
 
     public EndPoint() {
         assignLog();
@@ -49,14 +48,44 @@ public abstract class EndPoint {
                 .given()
                 .filter(new RequestFilter())
                 .spec(requestSpecification);
+        if (token != null) {
+            setToken(token);
+        }
     }
 
     protected void assignHeader(String key, String value) {
         request.header(key, value);
     }
 
-    protected void assignBodyParameter(Model model) {
-        request.body(model);
+    protected void assignBodyParameter(String json) {
+        request.body(json);
+    }
+
+    protected void assignPathParameter(String key, String path) {
+        request.pathParam(key, path);
+    }
+
+    protected void apiCallManager(String url, String method) {
+        switch (method) {
+            case GET:
+                response = request.get(url);
+                break;
+            case POST:
+                response = request.post(url);
+                break;
+            case PUT:
+                response = request.put(url);
+                break;
+            case PATCH:
+                response = request.patch(url);
+                break;
+            case DELETE:
+                response = request.delete(url);
+                break;
+            default:
+                response = null;
+                Log.error("Bad method name");
+        }
     }
 
     public boolean verifyStatusCode(int statusCode) {
@@ -113,11 +142,9 @@ public abstract class EndPoint {
                     .setContentType(ContentType.JSON)
                     .setAccept(ContentType.JSON)
                     .build();
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             Log.error("Failed initializing the logs");
         }
     }
-
-    protected abstract void apiCallManager(String resource, String method);
 }

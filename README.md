@@ -11,7 +11,7 @@
 * Example:
 
         mvn clean test -DsuiteName=regression
-        
+
 * To see the reports:
 
         allure serve target/allure-results/

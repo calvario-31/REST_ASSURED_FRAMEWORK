@@ -1,0 +1,316 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "articles": [
+        {
+          "title": "Central Configuration Representative",
+          "slug": "central-configuration-representative-s26aux",
+          "body": "Debitis enim qui. Quo ea modi animi accusamus amet. Et eos cum. Atque beatae delectus dolorum aliquam voluptatem numquam. Cupiditate accusamus repellendus nihil modi hic laborum.",
+          "createdAt": "2021-09-14T01:09:03.181Z",
+          "updatedAt": "2021-09-14T01:09:03.181Z",
+          "tagList": [],
+          "description": "Optio ducimus sed quisquam nihil repellendus.",
+          "author": {
+            "username": "nulla288",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        },
+        {
+          "title": "Global Paradigm Producer",
+          "slug": "global-paradigm-producer-eubrqu",
+          "body": "Qui aut architecto. Quia eligendi voluptates consequatur ipsum esse. Laudantium eius sint dignissimos. Ipsum impedit amet eos ut nam id omnis ducimus.",
+          "createdAt": "2021-09-14T01:08:54.469Z",
+          "updatedAt": "2021-09-14T01:08:54.469Z",
+          "tagList": [],
+          "description": "Adipisci dolor nobis aperiam eos eum eum ipsam distinctio tenetur.",
+          "author": {
+            "username": "nulla288",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        }
+      ],
+      "articlesCount": 500
+    }
+  ],
+  "required": [
+    "articles",
+    "articlesCount"
+  ],
+  "properties": {
+    "articles": {
+      "$id": "#/properties/articles",
+      "type": "array",
+      "title": "The articles schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "examples": [
+        [
+          {
+            "title": "Central Configuration Representative",
+            "slug": "central-configuration-representative-s26aux",
+            "body": "Debitis enim qui. Quo ea modi animi accusamus amet. Et eos cum. Atque beatae delectus dolorum aliquam voluptatem numquam. Cupiditate accusamus repellendus nihil modi hic laborum.",
+            "createdAt": "2021-09-14T01:09:03.181Z",
+            "updatedAt": "2021-09-14T01:09:03.181Z",
+            "tagList": [],
+            "description": "Optio ducimus sed quisquam nihil repellendus.",
+            "author": {
+              "username": "nulla288",
+              "bio": null,
+              "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+              "following": false
+            },
+            "favorited": false,
+            "favoritesCount": 0
+          },
+          {
+            "title": "Global Paradigm Producer",
+            "slug": "global-paradigm-producer-eubrqu",
+            "body": "Qui aut architecto. Quia eligendi voluptates consequatur ipsum esse. Laudantium eius sint dignissimos. Ipsum impedit amet eos ut nam id omnis ducimus.",
+            "createdAt": "2021-09-14T01:08:54.469Z",
+            "updatedAt": "2021-09-14T01:08:54.469Z",
+            "tagList": [],
+            "description": "Adipisci dolor nobis aperiam eos eum eum ipsam distinctio tenetur.",
+            "author": {
+              "username": "nulla288",
+              "bio": null,
+              "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+              "following": false
+            },
+            "favorited": false,
+            "favoritesCount": 0
+          }
+        ]
+      ],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/articles/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/articles/items/anyOf/0",
+            "type": "object",
+            "title": "The first anyOf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": {},
+            "examples": [
+              {
+                "title": "Central Configuration Representative",
+                "slug": "central-configuration-representative-s26aux",
+                "body": "Debitis enim qui. Quo ea modi animi accusamus amet. Et eos cum. Atque beatae delectus dolorum aliquam voluptatem numquam. Cupiditate accusamus repellendus nihil modi hic laborum.",
+                "createdAt": "2021-09-14T01:09:03.181Z",
+                "updatedAt": "2021-09-14T01:09:03.181Z",
+                "tagList": [],
+                "description": "Optio ducimus sed quisquam nihil repellendus.",
+                "author": {
+                  "username": "nulla288",
+                  "bio": null,
+                  "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+                  "following": false
+                },
+                "favorited": false,
+                "favoritesCount": 0
+              }
+            ],
+            "required": [
+              "title",
+              "slug",
+              "body",
+              "createdAt",
+              "updatedAt",
+              "tagList",
+              "description",
+              "author",
+              "favorited",
+              "favoritesCount"
+            ],
+            "properties": {
+              "title": {
+                "$id": "#/properties/articles/items/anyOf/0/properties/title",
+                "type": "string",
+                "title": "The title schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "Central Configuration Representative"
+                ]
+              },
+              "slug": {
+                "$id": "#/properties/articles/items/anyOf/0/properties/slug",
+                "type": "string",
+                "title": "The slug schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "central-configuration-representative-s26aux"
+                ]
+              },
+              "body": {
+                "$id": "#/properties/articles/items/anyOf/0/properties/body",
+                "type": "string",
+                "title": "The body schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "Debitis enim qui. Quo ea modi animi accusamus amet. Et eos cum. Atque beatae delectus dolorum aliquam voluptatem numquam. Cupiditate accusamus repellendus nihil modi hic laborum."
+                ]
+              },
+              "createdAt": {
+                "$id": "#/properties/articles/items/anyOf/0/properties/createdAt",
+                "type": "string",
+                "title": "The createdAt schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "2021-09-14T01:09:03.181Z"
+                ]
+              },
+              "updatedAt": {
+                "$id": "#/properties/articles/items/anyOf/0/properties/updatedAt",
+                "type": "string",
+                "title": "The updatedAt schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "2021-09-14T01:09:03.181Z"
+                ]
+              },
+              "tagList": {
+                "$id": "#/properties/articles/items/anyOf/0/properties/tagList",
+                "type": "array",
+                "title": "The tagList schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": [],
+                "examples": [
+                  []
+                ],
+                "additionalItems": true,
+                "items": {
+                  "$id": "#/properties/articles/items/anyOf/0/properties/tagList/items"
+                }
+              },
+              "description": {
+                "$id": "#/properties/articles/items/anyOf/0/properties/description",
+                "type": "string",
+                "title": "The description schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "Optio ducimus sed quisquam nihil repellendus."
+                ]
+              },
+              "author": {
+                "$id": "#/properties/articles/items/anyOf/0/properties/author",
+                "type": "object",
+                "title": "The author schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                  {
+                    "username": "nulla288",
+                    "bio": null,
+                    "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+                    "following": false
+                  }
+                ],
+                "required": [
+                  "username",
+                  "bio",
+                  "image",
+                  "following"
+                ],
+                "properties": {
+                  "username": {
+                    "$id": "#/properties/articles/items/anyOf/0/properties/author/properties/username",
+                    "type": "string",
+                    "title": "The username schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "nulla288"
+                    ]
+                  },
+                  "bio": {
+                    "$id": "#/properties/articles/items/anyOf/0/properties/author/properties/bio",
+                    "type": "null",
+                    "title": "The bio schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": null,
+                    "examples": [
+                      null
+                    ]
+                  },
+                  "image": {
+                    "$id": "#/properties/articles/items/anyOf/0/properties/author/properties/image",
+                    "type": "string",
+                    "title": "The image schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": "",
+                    "examples": [
+                      "https://static.productionready.io/images/smiley-cyrus.jpg"
+                    ]
+                  },
+                  "following": {
+                    "$id": "#/properties/articles/items/anyOf/0/properties/author/properties/following",
+                    "type": "boolean",
+                    "title": "The following schema",
+                    "description": "An explanation about the purpose of this instance.",
+                    "default": false,
+                    "examples": [
+                      false
+                    ]
+                  }
+                },
+                "additionalProperties": true
+              },
+              "favorited": {
+                "$id": "#/properties/articles/items/anyOf/0/properties/favorited",
+                "type": "boolean",
+                "title": "The favorited schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": false,
+                "examples": [
+                  false
+                ]
+              },
+              "favoritesCount": {
+                "$id": "#/properties/articles/items/anyOf/0/properties/favoritesCount",
+                "type": "integer",
+                "title": "The favoritesCount schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": 0,
+                "examples": [
+                  0
+                ]
+              }
+            },
+            "additionalProperties": true
+          }
+        ]
+      }
+    },
+    "articlesCount": {
+      "$id": "#/properties/articlesCount",
+      "type": "integer",
+      "title": "The articlesCount schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [
+        500
+      ]
+    }
+  },
+  "additionalProperties": true
+}

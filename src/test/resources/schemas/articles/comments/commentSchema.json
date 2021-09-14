@@ -1,0 +1,165 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "comment": {
+        "id": 105874,
+        "createdAt": "2021-09-14T02:05:56.532Z",
+        "updatedAt": "2021-09-14T02:05:56.532Z",
+        "body": "Facilis doloremque quae dolore iure deleniti. A dolorum magni dolorem. Quia possimus voluptas quos blanditiis repellat voluptate repellat. Sunt non quibusdam velit culpa soluta dolorum. Architecto quas pariatur sit doloribus consequatur.",
+        "author": {
+          "username": "nulla288",
+          "bio": null,
+          "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+          "following": false
+        }
+      }
+    }
+  ],
+  "required": [
+    "comment"
+  ],
+  "properties": {
+    "comment": {
+      "$id": "#/properties/comment",
+      "type": "object",
+      "title": "The comment schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "id": 105874,
+          "createdAt": "2021-09-14T02:05:56.532Z",
+          "updatedAt": "2021-09-14T02:05:56.532Z",
+          "body": "Facilis doloremque quae dolore iure deleniti. A dolorum magni dolorem. Quia possimus voluptas quos blanditiis repellat voluptate repellat. Sunt non quibusdam velit culpa soluta dolorum. Architecto quas pariatur sit doloribus consequatur.",
+          "author": {
+            "username": "nulla288",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          }
+        }
+      ],
+      "required": [
+        "id",
+        "createdAt",
+        "updatedAt",
+        "body",
+        "author"
+      ],
+      "properties": {
+        "id": {
+          "$id": "#/properties/comment/properties/id",
+          "type": "integer",
+          "title": "The id schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": 0,
+          "examples": [
+            105874
+          ]
+        },
+        "createdAt": {
+          "$id": "#/properties/comment/properties/createdAt",
+          "type": "string",
+          "title": "The createdAt schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "2021-09-14T02:05:56.532Z"
+          ]
+        },
+        "updatedAt": {
+          "$id": "#/properties/comment/properties/updatedAt",
+          "type": "string",
+          "title": "The updatedAt schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "2021-09-14T02:05:56.532Z"
+          ]
+        },
+        "body": {
+          "$id": "#/properties/comment/properties/body",
+          "type": "string",
+          "title": "The body schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Facilis doloremque quae dolore iure deleniti. A dolorum magni dolorem. Quia possimus voluptas quos blanditiis repellat voluptate repellat. Sunt non quibusdam velit culpa soluta dolorum. Architecto quas pariatur sit doloribus consequatur."
+          ]
+        },
+        "author": {
+          "$id": "#/properties/comment/properties/author",
+          "type": "object",
+          "title": "The author schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "username": "nulla288",
+              "bio": null,
+              "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+              "following": false
+            }
+          ],
+          "required": [
+            "username",
+            "bio",
+            "image",
+            "following"
+          ],
+          "properties": {
+            "username": {
+              "$id": "#/properties/comment/properties/author/properties/username",
+              "type": "string",
+              "title": "The username schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "nulla288"
+              ]
+            },
+            "bio": {
+              "$id": "#/properties/comment/properties/author/properties/bio",
+              "type": "null",
+              "title": "The bio schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": null,
+              "examples": [
+                null
+              ]
+            },
+            "image": {
+              "$id": "#/properties/comment/properties/author/properties/image",
+              "type": "string",
+              "title": "The image schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "https://static.productionready.io/images/smiley-cyrus.jpg"
+              ]
+            },
+            "following": {
+              "$id": "#/properties/comment/properties/author/properties/following",
+              "type": "boolean",
+              "title": "The following schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": false,
+              "examples": [
+                false
+              ]
+            }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Real app api smoke suite" verbose="2">
+    <groups>
+        <run>
+            <include name="smoke"/>
+        </run>
+    </groups>
+
+    <test name="articles">
+        <packages>
+            <package name="articles.*"/>
+        </packages>
+    </test>
+
+    <test name="tags">
+        <packages>
+            <package name="tags"/>
+        </packages>
+    </test>
+
+    <test name="users">
+        <packages>
+            <package name="users"/>
+        </packages>
+    </test>
+</suite>

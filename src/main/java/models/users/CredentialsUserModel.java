@@ -1,20 +1,21 @@
 package models.users;
 
 import com.github.javafaker.Faker;
+import models.Model;
 
-public class CredentialsModel {
+public class CredentialsUserModel extends Model {
     private String username;
     private String email;
     private String password;
 
-    public CredentialsModel() {
+    public CredentialsUserModel() {
         Faker faker = new Faker();
-        username = faker.name().username();
+        username = faker.lorem().characters(10, 19);
         email = faker.internet().emailAddress();
         password = faker.internet().password(10, 12);
     }
 
-    public CredentialsModel(String username, String email, String password) {
+    public CredentialsUserModel(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;

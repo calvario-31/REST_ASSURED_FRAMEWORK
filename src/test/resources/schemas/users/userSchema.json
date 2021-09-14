@@ -1,12 +1,140 @@
 {
-  "user": {
-    "id": 224574,
-    "email": "julene.konopelski@gmail.com",
-    "createdAt": "2021-09-13T05:14:40.839Z",
-    "updatedAt": "2021-09-13T05:14:40.844Z",
-    "username": "fafaf",
-    "bio": null,
-    "image": null,
-    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjI0NTc0LCJ1c2VybmFtZSI6ImZyYW5jaXNjby5idWNrcmlkZ2UiLCJleHAiOjE2MzY2OTQwODB9.sZnG41BgoQDfvAfdjwhavjzybQ6m5K8Vtdv8u3NkJmo"
-  }
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "user": {
+        "id": 224574,
+        "email": "julene.konopelski@gmail.com",
+        "createdAt": "2021-09-13T05:14:40.839Z",
+        "updatedAt": "2021-09-13T05:14:40.844Z",
+        "username": "fafaf",
+        "bio": null,
+        "image": null,
+        "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjI0NTc0LCJ1c2VybmFtZSI6ImZyYW5jaXNjby5idWNrcmlkZ2UiLCJleHAiOjE2MzY2OTQwODB9.sZnG41BgoQDfvAfdjwhavjzybQ6m5K8Vtdv8u3NkJmo"
+      }
+    }
+  ],
+  "required": [
+    "user"
+  ],
+  "properties": {
+    "user": {
+      "$id": "#/properties/user",
+      "type": "object",
+      "title": "The user schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "id": 224574,
+          "email": "julene.konopelski@gmail.com",
+          "createdAt": "2021-09-13T05:14:40.839Z",
+          "updatedAt": "2021-09-13T05:14:40.844Z",
+          "username": "fafaf",
+          "bio": null,
+          "image": null,
+          "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjI0NTc0LCJ1c2VybmFtZSI6ImZyYW5jaXNjby5idWNrcmlkZ2UiLCJleHAiOjE2MzY2OTQwODB9.sZnG41BgoQDfvAfdjwhavjzybQ6m5K8Vtdv8u3NkJmo"
+        }
+      ],
+      "required": [
+        "id",
+        "email",
+        "createdAt",
+        "updatedAt",
+        "username",
+        "bio",
+        "image",
+        "token"
+      ],
+      "properties": {
+        "id": {
+          "$id": "#/properties/user/properties/id",
+          "type": "integer",
+          "title": "The id schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": 0,
+          "examples": [
+            224574
+          ]
+        },
+        "email": {
+          "$id": "#/properties/user/properties/email",
+          "type": "string",
+          "title": "The email schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "julene.konopelski@gmail.com"
+          ]
+        },
+        "createdAt": {
+          "$id": "#/properties/user/properties/createdAt",
+          "type": "string",
+          "title": "The createdAt schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "2021-09-13T05:14:40.839Z"
+          ]
+        },
+        "updatedAt": {
+          "$id": "#/properties/user/properties/updatedAt",
+          "type": "string",
+          "title": "The updatedAt schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "2021-09-13T05:14:40.844Z"
+          ]
+        },
+        "username": {
+          "$id": "#/properties/user/properties/username",
+          "type": "string",
+          "title": "The username schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "fafaf"
+          ]
+        },
+        "bio": {
+          "$id": "#/properties/user/properties/bio",
+          "type": "null",
+          "title": "The bio schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "image": {
+          "$id": "#/properties/user/properties/image",
+          "type": "null",
+          "title": "The image schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": null,
+          "examples": [
+            null
+          ]
+        },
+        "token": {
+          "$id": "#/properties/user/properties/token",
+          "type": "string",
+          "title": "The token schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjI0NTc0LCJ1c2VybmFtZSI6ImZyYW5jaXNjby5idWNrcmlkZ2UiLCJleHAiOjE2MzY2OTQwODB9.sZnG41BgoQDfvAfdjwhavjzybQ6m5K8Vtdv8u3NkJmo"
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
 }

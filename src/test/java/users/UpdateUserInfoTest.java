@@ -11,7 +11,7 @@ import utilities.JsonPayloadProvider;
 
 import static utilities.SchemaProvider.getUserSchemaPath;
 
-public class RegisterTest extends Base {
+public class UpdateUserInfoTest extends Base {
     private UsersEndPoint usersEndPoint;
     private SoftAssert softAssert;
 
@@ -20,9 +20,9 @@ public class RegisterTest extends Base {
         initEndPoints();
     }
 
-    @Test(dataProvider = "register data", groups = {"smoke"})
-    public void registerTest(String credentialsPayload, String schemaJsonPath) {
-        usersEndPoint.createUser(credentialsPayload);
+    @Test(dataProvider = "update data", groups = {"smoke"})
+    public void testName(String updateUserPayload, String schemaJsonPath) {
+        usersEndPoint.updateUserInfo(updateUserPayload);
 
         Assert.assertTrue(usersEndPoint.verifyStatusCode(200));
 
@@ -34,11 +34,11 @@ public class RegisterTest extends Base {
 
     @Override
     public void initEndPoints() {
-        usersEndPoint = new UsersEndPoint();
+        usersEndPoint = new UsersEndPoint(token);
     }
 
-    @DataProvider(name = "register data")
-    public Object[][] registerDataProvider() {
+    @DataProvider(name = "update data")
+    public Object[][] updateUserDataProvider() {
         return new Object[][]{
                 {new JsonPayloadProvider().getUserJson(), getUserSchemaPath()}
         };

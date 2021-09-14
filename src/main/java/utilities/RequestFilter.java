@@ -16,7 +16,7 @@ public class RequestFilter implements Filter {
         Response response = ctx.next(requestSpec, responseSpec);
 
         String token = requestSpec.getHeaders().getValue("Authorization");
-        if(token == null) {
+        if (token == null) {
             token = "--";
         }
 

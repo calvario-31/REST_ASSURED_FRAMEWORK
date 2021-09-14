@@ -1,0 +1,234 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "article": {
+        "title": "Global Assurance Liaison",
+        "slug": "global-assurance-liaison-6zoxph",
+        "body": "Quidem minima dolore odio blanditiis nesciunt fugiat quia magnam. Rerum et nesciunt laudantium. Eum perspiciatis ut optio ut dolores et saepe adipisci. In nostrum nesciunt quia possimus id dolor. Velit natus dolores. Voluptate qui voluptates.",
+        "createdAt": "2021-09-14T00:48:12.539Z",
+        "updatedAt": "2021-09-14T00:48:12.539Z",
+        "tagList": [],
+        "description": "Nesciunt velit in consectetur enim consequatur perferendis eum.",
+        "author": {
+          "username": "nulla288",
+          "bio": null,
+          "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+          "following": false
+        },
+        "favorited": false,
+        "favoritesCount": 0
+      }
+    }
+  ],
+  "required": [
+    "article"
+  ],
+  "properties": {
+    "article": {
+      "$id": "#/properties/article",
+      "type": "object",
+      "title": "The article schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "title": "Global Assurance Liaison",
+          "slug": "global-assurance-liaison-6zoxph",
+          "body": "Quidem minima dolore odio blanditiis nesciunt fugiat quia magnam. Rerum et nesciunt laudantium. Eum perspiciatis ut optio ut dolores et saepe adipisci. In nostrum nesciunt quia possimus id dolor. Velit natus dolores. Voluptate qui voluptates.",
+          "createdAt": "2021-09-14T00:48:12.539Z",
+          "updatedAt": "2021-09-14T00:48:12.539Z",
+          "tagList": [],
+          "description": "Nesciunt velit in consectetur enim consequatur perferendis eum.",
+          "author": {
+            "username": "nulla288",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        }
+      ],
+      "required": [
+        "title",
+        "slug",
+        "body",
+        "createdAt",
+        "updatedAt",
+        "tagList",
+        "description",
+        "author",
+        "favorited",
+        "favoritesCount"
+      ],
+      "properties": {
+        "title": {
+          "$id": "#/properties/article/properties/title",
+          "type": "string",
+          "title": "The title schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Global Assurance Liaison"
+          ]
+        },
+        "slug": {
+          "$id": "#/properties/article/properties/slug",
+          "type": "string",
+          "title": "The slug schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "global-assurance-liaison-6zoxph"
+          ]
+        },
+        "body": {
+          "$id": "#/properties/article/properties/body",
+          "type": "string",
+          "title": "The body schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Quidem minima dolore odio blanditiis nesciunt fugiat quia magnam. Rerum et nesciunt laudantium. Eum perspiciatis ut optio ut dolores et saepe adipisci. In nostrum nesciunt quia possimus id dolor. Velit natus dolores. Voluptate qui voluptates."
+          ]
+        },
+        "createdAt": {
+          "$id": "#/properties/article/properties/createdAt",
+          "type": "string",
+          "title": "The createdAt schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "2021-09-14T00:48:12.539Z"
+          ]
+        },
+        "updatedAt": {
+          "$id": "#/properties/article/properties/updatedAt",
+          "type": "string",
+          "title": "The updatedAt schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "2021-09-14T00:48:12.539Z"
+          ]
+        },
+        "tagList": {
+          "$id": "#/properties/article/properties/tagList",
+          "type": "array",
+          "title": "The tagList schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": [],
+          "examples": [
+            []
+          ],
+          "additionalItems": true,
+          "items": {
+            "$id": "#/properties/article/properties/tagList/items"
+          }
+        },
+        "description": {
+          "$id": "#/properties/article/properties/description",
+          "type": "string",
+          "title": "The description schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Nesciunt velit in consectetur enim consequatur perferendis eum."
+          ]
+        },
+        "author": {
+          "$id": "#/properties/article/properties/author",
+          "type": "object",
+          "title": "The author schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+            {
+              "username": "nulla288",
+              "bio": null,
+              "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+              "following": false
+            }
+          ],
+          "required": [
+            "username",
+            "bio",
+            "image",
+            "following"
+          ],
+          "properties": {
+            "username": {
+              "$id": "#/properties/article/properties/author/properties/username",
+              "type": "string",
+              "title": "The username schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "nulla288"
+              ]
+            },
+            "bio": {
+              "$id": "#/properties/article/properties/author/properties/bio",
+              "type": "null",
+              "title": "The bio schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": null,
+              "examples": [
+                null
+              ]
+            },
+            "image": {
+              "$id": "#/properties/article/properties/author/properties/image",
+              "type": "string",
+              "title": "The image schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": "",
+              "examples": [
+                "https://static.productionready.io/images/smiley-cyrus.jpg"
+              ]
+            },
+            "following": {
+              "$id": "#/properties/article/properties/author/properties/following",
+              "type": "boolean",
+              "title": "The following schema",
+              "description": "An explanation about the purpose of this instance.",
+              "default": false,
+              "examples": [
+                false
+              ]
+            }
+          },
+          "additionalProperties": true
+        },
+        "favorited": {
+          "$id": "#/properties/article/properties/favorited",
+          "type": "boolean",
+          "title": "The favorited schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": false,
+          "examples": [
+            false
+          ]
+        },
+        "favoritesCount": {
+          "$id": "#/properties/article/properties/favoritesCount",
+          "type": "integer",
+          "title": "The favoritesCount schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": 0,
+          "examples": [
+            0
+          ]
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
