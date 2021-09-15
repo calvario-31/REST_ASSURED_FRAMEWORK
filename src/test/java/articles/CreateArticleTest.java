@@ -15,7 +15,7 @@ public class CreateArticleTest extends Base {
     private ArticlesEndPoint articlesEndPoint;
     private ArticleResponseModel articleResponse;
 
-    @Test(dataProvider = "new article data", groups = {"smoke"})
+    @Test(dataProvider = "new article data", groups = {"regression"})
     public void createArticleTest(String payload, String schemaJsonPath) {
         articlesEndPoint = new ArticlesEndPoint(token);
 

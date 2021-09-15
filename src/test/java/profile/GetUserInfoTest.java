@@ -8,7 +8,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Base;
-import utilities.Log;
 
 import static utilities.endpointhelpers.SchemaProvider.getProfileSchemaPath;
 
@@ -21,7 +20,6 @@ public class GetUserInfoTest extends Base {
     public void getUserInfoTest(String schemaJsonPath) {
         usersEndPoint = new UsersEndPoint();
         userResponse = usersEndPoint.createNewUser();
-        Log.debug(userResponse.getUsername());
 
         profileEndPoint = new ProfileEndPoint(userResponse.getToken());
         profileEndPoint.getUserInfo(userResponse.getUsername());

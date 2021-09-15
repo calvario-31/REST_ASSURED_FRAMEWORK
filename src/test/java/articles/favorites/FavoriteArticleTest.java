@@ -16,7 +16,7 @@ public class FavoriteArticleTest extends Base {
     private ArticleResponseModel articleResponse;
     private ArticleResponseModel newArticleResponse;
 
-    @Test(dataProvider = "article data", groups = {"smoke"})
+    @Test(dataProvider = "article data", groups = {"regression"})
     public void favoriteArticleTest(String schemaJsonPath) {
         newArticleResponse = new ArticlesEndPoint(token).generateNewArticle().getArticle();
         favoriteEndPoint = new FavoriteEndPoint(token);

@@ -16,7 +16,7 @@ public class DeleteCommentTest extends Base {
     private CommentResponseModel commentResponse;
     private ArticleResponseModel newArticleResponse;
 
-    @Test(dataProvider = "comment data", groups = {"smoke"})
+    @Test(dataProvider = "comment data", groups = {"regression"})
     public void testName(String payload) {
         newArticleResponse = new ArticlesEndPoint(token).generateNewArticle().getArticle();
         commentsEndPoint = new CommentsEndPoint(token);

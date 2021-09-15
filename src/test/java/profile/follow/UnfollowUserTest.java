@@ -16,7 +16,7 @@ public class UnfollowUserTest extends Base {
     private ProfileModel profileResponse;
     private UserResponseModel userToUnfollow;
 
-    @Test(dataProvider = "get user info data", groups = {"smoke"})
+    @Test(dataProvider = "get user info data", groups = {"regression"})
     public void unfollowUserTest(String schemaJsonPath) {
         userToUnfollow = generateNewUser();
         followUserEndPoint = new FollowUserEndPoint(userToUnfollow.getToken());

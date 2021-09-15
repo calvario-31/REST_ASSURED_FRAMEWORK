@@ -13,7 +13,7 @@ public class GetAllArticlesTest extends Base {
     private ArticlesEndPoint articlesEndPoint;
     private GetAllArticlesModel articleResponse;
 
-    @Test(groups = {"smoke"})
+    @Test(groups = {"regression"})
     public void getAllArticlesTest() {
         articlesEndPoint = new ArticlesEndPoint(token);
         articleResponse = articlesEndPoint.getAllArticles();

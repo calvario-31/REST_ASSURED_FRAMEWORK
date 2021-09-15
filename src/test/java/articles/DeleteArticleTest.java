@@ -10,7 +10,7 @@ public class DeleteArticleTest extends Base {
     private ArticlesEndPoint articlesEndPoint;
     private ArticleResponseModel articleResponse;
 
-    @Test(groups = {"smoke"})
+    @Test(groups = {"regression"})
     public void deleteArticleTest() {
         articlesEndPoint = new ArticlesEndPoint(token);
         articleResponse =  articlesEndPoint.generateNewArticle().getArticle();

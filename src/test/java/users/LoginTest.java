@@ -14,7 +14,7 @@ public class LoginTest extends Base {
     private UsersEndPoint usersEndPoint;
     private SoftAssert softAssert;
 
-    @Test(dataProvider = "credentials data", groups = {"smoke"})
+    @Test(dataProvider = "credentials data", groups = {"regression"})
     public void loginTest(String payload, String schemaJsonPath) {
         usersEndPoint = new UsersEndPoint();
         usersEndPoint.createUser(payload);

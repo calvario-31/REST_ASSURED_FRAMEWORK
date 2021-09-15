@@ -14,7 +14,7 @@ public class RegisterTest extends Base {
     private UsersEndPoint usersEndPoint;
     private SoftAssert softAssert;
 
-    @Test(dataProvider = "register data", groups = {"smoke"})
+    @Test(dataProvider = "register data", groups = {"regression"})
     public void registerTest(String payload, String schemaJsonPath) {
         usersEndPoint = new UsersEndPoint();
         usersEndPoint.createUser(payload);

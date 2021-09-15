@@ -16,7 +16,7 @@ public class FollowUserTest extends Base {
     private UserResponseModel userToFollow;
     private ProfileModel profileResponse;
 
-    @Test(dataProvider = "get user info data", groups = {"smoke"})
+    @Test(dataProvider = "get user info data", groups = {"regression"})
     public void followUserTest(String schemaJsonPath) {
         userToFollow = generateNewUser();
         followUserEndPoint = new FollowUserEndPoint(token);

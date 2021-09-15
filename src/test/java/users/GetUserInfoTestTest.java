@@ -14,7 +14,7 @@ public class GetUserInfoTestTest extends Base {
     private UsersEndPoint usersEndPoint;
     private UserResponseModel userResponse;
 
-    @Test(dataProvider = "credentials data", groups = {"smoke"})
+    @Test(dataProvider = "credentials data", groups = {"regression"})
     public void getUserInfoTest(String schemaJsonPath) {
         usersEndPoint = new UsersEndPoint(token);
         userResponse = usersEndPoint.getCurrentUserInfo();

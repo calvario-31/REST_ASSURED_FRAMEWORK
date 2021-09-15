@@ -14,7 +14,7 @@ public class UpdateUserInfoTest extends Base {
     private UsersEndPoint usersEndPoint;
     private SoftAssert softAssert;
 
-    @Test(dataProvider = "update data", groups = {"smoke"})
+    @Test(dataProvider = "update data", groups = {"regression"})
     public void testName(String payload, String schemaJsonPath) {
         usersEndPoint = new UsersEndPoint(token);
         usersEndPoint.updateUserInfo(payload);

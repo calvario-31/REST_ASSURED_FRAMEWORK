@@ -19,7 +19,7 @@ public class GetAllCommentTest extends Base {
     private ArticleResponseModel newArticleResponse;
     private GetAllCommentsModel allCommentsResponse;
 
-    @Test(dataProvider = "comment data", groups = {"smoke"})
+    @Test(dataProvider = "comment data", groups = {"regression"})
     public void getCommentTest(String schemaJsonPath) {
         newArticleResponse = new ArticlesEndPoint(token).generateNewArticle().getArticle();
         commentsEndPoint = new CommentsEndPoint(token);
