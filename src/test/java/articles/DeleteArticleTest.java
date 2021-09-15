@@ -13,7 +13,7 @@ public class DeleteArticleTest extends Base {
     @Test(groups = {"regression"})
     public void deleteArticleTest() {
         articlesEndPoint = new ArticlesEndPoint(token);
-        articleResponse =  articlesEndPoint.generateNewArticle().getArticle();
+        articleResponse =  articlesEndPoint.generateNewArticle();
 
         articlesEndPoint.deleteArticle(articleResponse.getSlug());
 

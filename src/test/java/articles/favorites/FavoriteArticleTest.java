@@ -18,10 +18,10 @@ public class FavoriteArticleTest extends Base {
 
     @Test(dataProvider = "article data", groups = {"regression"})
     public void favoriteArticleTest(String schemaJsonPath) {
-        newArticleResponse = new ArticlesEndPoint(token).generateNewArticle().getArticle();
+        newArticleResponse = new ArticlesEndPoint(token).generateNewArticle();
         favoriteEndPoint = new FavoriteEndPoint(token);
 
-        articleResponse = favoriteEndPoint.favoriteArticle(newArticleResponse.getSlug()).getArticle();
+        articleResponse = favoriteEndPoint.favoriteArticle(newArticleResponse.getSlug());
 
         Assert.assertTrue(favoriteEndPoint.verifyStatusCode(200));
         softAssert = new SoftAssert();

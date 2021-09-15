@@ -23,10 +23,10 @@ public class ArticleEndToEndTest extends Base {
     public void articleEndToEndTest(String payloadUpdateArticle) {
         articlesEndPoint = new ArticlesEndPoint(token);
         //create
-        articleResponse = articlesEndPoint.generateNewArticle().getArticle();
+        articleResponse = articlesEndPoint.generateNewArticle();
         Assert.assertTrue(articlesEndPoint.verifyStatusCode(200));
         //update
-        articleResponse = articlesEndPoint.updateArticle(articleResponse.getSlug(), payloadUpdateArticle).getArticle();
+        articleResponse = articlesEndPoint.updateArticle(articleResponse.getSlug(), payloadUpdateArticle);
         Assert.assertTrue(articlesEndPoint.verifyStatusCode(200));
         //get
         articlesEndPoint.getArticle(articleResponse.getSlug());
@@ -39,7 +39,7 @@ public class ArticleEndToEndTest extends Base {
 
         List<Integer> createdIdListed = new ArrayList<>();
         for(int i =0; i<10; i++) {
-            commentResponseModel = commentsEndPoint.generateComment(articleResponse.getSlug()).getComment();
+            commentResponseModel = commentsEndPoint.generateComment(articleResponse.getSlug());
             Assert.assertTrue(commentsEndPoint.verifyStatusCode(200));
             createdIdListed.add(commentResponseModel.getId());
         }

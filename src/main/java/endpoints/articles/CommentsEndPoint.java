@@ -1,7 +1,7 @@
 package endpoints.articles;
 
 import endpoints.EndPoint;
-import models.Model;
+import models.articles.CommentResponseModel;
 import models.articles.GetAllCommentsModel;
 import models.articles.GetCommentModel;
 import utilities.Log;
@@ -23,7 +23,7 @@ public class CommentsEndPoint extends EndPoint {
         return getAllCommentsResponseBodyAsModel();
     }
 
-    public GetCommentModel createComment(String articleId, String payload) {
+    public CommentResponseModel createComment(String articleId, String payload) {
         createNewRequest();
         assignArticleId(articleId);
         assignBodyParameter(payload);
@@ -40,7 +40,7 @@ public class CommentsEndPoint extends EndPoint {
         apiCallManager(commentIdPath, DELETE);
     }
 
-    public GetCommentModel generateComment(String articleId) {
+    public CommentResponseModel generateComment(String articleId) {
         return createComment(articleId,  new JsonPayloadProvider().getCommentJson());
     }
 
@@ -52,8 +52,8 @@ public class CommentsEndPoint extends EndPoint {
         assignPathParameter("idComment", idComment);
     }
 
-    private GetCommentModel getCommentResponseBodyAsModel() {
-        return getResponseBody().as(GetCommentModel.class);
+    private CommentResponseModel getCommentResponseBodyAsModel() {
+        return getResponseBody().as(GetCommentModel.class).getComment();
     }
 
     private GetAllCommentsModel getAllCommentsResponseBodyAsModel() {

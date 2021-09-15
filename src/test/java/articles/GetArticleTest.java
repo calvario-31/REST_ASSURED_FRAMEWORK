@@ -17,7 +17,7 @@ public class GetArticleTest extends Base {
     @Test(dataProvider = "article data", groups = {"regression"})
     public void getArticleTest(String schemaJsonPath) {
         articlesEndPoint = new ArticlesEndPoint(token);
-        newArticleResponse = articlesEndPoint.generateNewArticle().getArticle();
+        newArticleResponse = articlesEndPoint.generateNewArticle();
 
         articlesEndPoint.getArticle(newArticleResponse.getSlug());
 

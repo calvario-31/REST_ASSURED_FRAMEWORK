@@ -21,7 +21,7 @@ public class GetAllCommentTest extends Base {
 
     @Test(dataProvider = "comment data", groups = {"regression"})
     public void getCommentTest(String schemaJsonPath) {
-        newArticleResponse = new ArticlesEndPoint(token).generateNewArticle().getArticle();
+        newArticleResponse = new ArticlesEndPoint(token).generateNewArticle();
         commentsEndPoint = new CommentsEndPoint(token);
 
         for(int i =0; i<10; i++) {

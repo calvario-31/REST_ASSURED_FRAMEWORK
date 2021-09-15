@@ -1,6 +1,7 @@
 package endpoints.articles;
 
 import endpoints.EndPoint;
+import models.articles.ArticleResponseModel;
 import models.articles.GetAllArticlesModel;
 import models.articles.GetArticleModel;
 import utilities.Log;
@@ -14,7 +15,7 @@ public class ArticlesEndPoint extends EndPoint {
         super(token);
     }
 
-    public GetArticleModel createArticle(String payload) {
+    public ArticleResponseModel createArticle(String payload) {
         createNewRequest();
         assignBodyParameter(payload);
         Log.info("Calling create article endpoint");
@@ -29,7 +30,7 @@ public class ArticlesEndPoint extends EndPoint {
         apiCallManager(articleIdPath, DELETE);
     }
 
-    public GetArticleModel getArticle(String articleId) {
+    public ArticleResponseModel getArticle(String articleId) {
         createNewRequest();
         assignArticleId(articleId);
         Log.info("Calling get article endpoint");
@@ -44,7 +45,7 @@ public class ArticlesEndPoint extends EndPoint {
         return getAllArticlesResponseBodyAsModel();
     }
 
-    public GetArticleModel updateArticle(String articleId, String payload) {
+    public ArticleResponseModel updateArticle(String articleId, String payload) {
         createNewRequest();
         assignArticleId(articleId);
         assignBodyParameter(payload);
@@ -53,7 +54,7 @@ public class ArticlesEndPoint extends EndPoint {
         return getArticleResponseBodyAsModel();
     }
 
-    public GetArticleModel generateNewArticle() {
+    public ArticleResponseModel generateNewArticle() {
         return createArticle(new JsonPayloadProvider().getArticleJson());
     }
 
@@ -61,8 +62,8 @@ public class ArticlesEndPoint extends EndPoint {
         assignPathParameter("articleId", articleId);
     }
 
-    private GetArticleModel getArticleResponseBodyAsModel() {
-        return getResponseBody().as(GetArticleModel.class);
+    private ArticleResponseModel getArticleResponseBodyAsModel() {
+        return getResponseBody().as(GetArticleModel.class).getArticle();
     }
 
     private GetAllArticlesModel getAllArticlesResponseBodyAsModel() {

@@ -1,6 +1,7 @@
 package endpoints.articles;
 
 import endpoints.EndPoint;
+import models.articles.ArticleResponseModel;
 import models.articles.GetArticleModel;
 import utilities.Log;
 
@@ -11,7 +12,7 @@ public class FavoriteEndPoint extends EndPoint {
         super(token);
     }
 
-    public GetArticleModel favoriteArticle(String articleId) {
+    public ArticleResponseModel favoriteArticle(String articleId) {
         createNewRequest();
         assignArticleId(articleId);
         Log.info("Calling favorite article endpoint");
@@ -19,7 +20,7 @@ public class FavoriteEndPoint extends EndPoint {
         return getArticleResponseBodyAsModel();
     }
 
-    public GetArticleModel unfavoriteArticle(String articleId) {
+    public ArticleResponseModel unfavoriteArticle(String articleId) {
         createNewRequest();
         assignArticleId(articleId);
         Log.info("Calling unfavorite article endpoint");
@@ -31,7 +32,7 @@ public class FavoriteEndPoint extends EndPoint {
         assignPathParameter("articleId", articleId);
     }
 
-    public GetArticleModel getArticleResponseBodyAsModel() {
-        return getResponseBody().as(GetArticleModel.class);
+    public ArticleResponseModel getArticleResponseBodyAsModel() {
+        return getResponseBody().as(GetArticleModel.class).getArticle();
     }
 }

@@ -18,7 +18,7 @@ public class UpdateArticleTest extends Base {
     @Test(dataProvider = "update article data", groups = {"regression"})
     public void updateArticleTest(String payloadUpdate, String schemaJsonPath) {
         articlesEndPoint = new ArticlesEndPoint(token);
-        newArticleResponse = articlesEndPoint.generateNewArticle().getArticle();
+        newArticleResponse = articlesEndPoint.generateNewArticle();
         articlesEndPoint.updateArticle(newArticleResponse.getSlug(), payloadUpdate);
 
         Assert.assertTrue(articlesEndPoint.verifyStatusCode(200));

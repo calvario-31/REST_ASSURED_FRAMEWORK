@@ -18,7 +18,7 @@ public class CreateCommentTest extends Base {
 
     @Test(dataProvider = "comment data", groups = {"regression"})
     public void createCommentTest(String payload, String schemaJsonPath) {
-        newArticleResponse = new ArticlesEndPoint(token).generateNewArticle().getArticle();
+        newArticleResponse = new ArticlesEndPoint(token).generateNewArticle();
         commentsEndPoint = new CommentsEndPoint(token);
 
         commentsEndPoint.createComment(newArticleResponse.getSlug(), payload);

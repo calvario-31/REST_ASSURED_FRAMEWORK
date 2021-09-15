@@ -19,7 +19,7 @@ public class CreateArticleTest extends Base {
     public void createArticleTest(String payload, String schemaJsonPath) {
         articlesEndPoint = new ArticlesEndPoint(token);
 
-        articleResponse = articlesEndPoint.createArticle(payload).getArticle();
+        articleResponse = articlesEndPoint.createArticle(payload);
 
         Assert.assertTrue(articlesEndPoint.verifyStatusCode(200));
         softAssert = new SoftAssert();
