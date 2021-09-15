@@ -60,7 +60,7 @@ public abstract class EndPoint {
         request.header(key, value);
     }
 
-    protected void assignBodyParameter(Model model) {
+    protected void assignBodyParameter(String model) {
         request.body(model);
     }
 

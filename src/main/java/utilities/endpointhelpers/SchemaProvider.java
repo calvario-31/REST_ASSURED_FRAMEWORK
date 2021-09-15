@@ -2,6 +2,7 @@ package utilities.endpointhelpers;
 
 public class SchemaProvider {
     private static final String userSchemaPath = "schemas/users/userSchema.json";
+    private static final String updateUserSchemaPath = "schemas/users/updateUserSchema.json";
     private static final String tagsSchemaPath = "schemas/tags/tagsSchema.json";
     private static final String articleSchemaPath = "schemas/articles/articleSchema.json";
     private static final String allArticlesSchemaPath = "schemas/articles/allArticlesSchema.json";
@@ -11,6 +12,10 @@ public class SchemaProvider {
 
     public static String getUserSchemaPath() {
         return userSchemaPath;
+    }
+
+    public static String getUpdateUserSchemaPath() {
+        return updateUserSchemaPath;
     }
 
     public static String getTagsSchemaPath() {

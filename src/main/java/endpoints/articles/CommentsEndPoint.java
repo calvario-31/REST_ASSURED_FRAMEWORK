@@ -23,7 +23,7 @@ public class CommentsEndPoint extends EndPoint {
         return getAllCommentsResponseBodyAsModel();
     }
 
-    public GetCommentModel createComment(String articleId, Model payload) {
+    public GetCommentModel createComment(String articleId, String payload) {
         createNewRequest();
         assignArticleId(articleId);
         assignBodyParameter(payload);

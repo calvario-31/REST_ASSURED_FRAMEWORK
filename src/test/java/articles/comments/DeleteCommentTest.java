@@ -2,7 +2,6 @@ package articles.comments;
 
 import endpoints.articles.ArticlesEndPoint;
 import endpoints.articles.CommentsEndPoint;
-import models.Model;
 import models.articles.ArticleResponseModel;
 import models.articles.CommentResponseModel;
 import org.testng.Assert;
@@ -18,7 +17,7 @@ public class DeleteCommentTest extends Base {
     private ArticleResponseModel newArticleResponse;
 
     @Test(dataProvider = "comment data", groups = {"smoke"})
-    public void testName(Model payload) {
+    public void testName(String payload) {
         newArticleResponse = new ArticlesEndPoint(token).generateNewArticle().getArticle();
         commentsEndPoint = new CommentsEndPoint(token);
         commentResponse = commentsEndPoint.createComment(newArticleResponse.getSlug(), payload).getComment();

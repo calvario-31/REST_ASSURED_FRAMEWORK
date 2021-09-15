@@ -1,6 +1,7 @@
 package users;
 
 import endpoints.users.UsersEndPoint;
+import models.users.UserResponseModel;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -11,12 +12,12 @@ import static utilities.endpointhelpers.SchemaProvider.getUserSchemaPath;
 
 public class GetUserInfoTestTest extends Base {
     private UsersEndPoint usersEndPoint;
-    //private UserResponseModel userResponse;
+    private UserResponseModel userResponse;
 
     @Test(dataProvider = "credentials data", groups = {"smoke"})
     public void getUserInfoTest(String schemaJsonPath) {
         usersEndPoint = new UsersEndPoint(token);
-        usersEndPoint.getCurrentUserInfo();
+        userResponse = usersEndPoint.getCurrentUserInfo();
 
         Assert.assertTrue(usersEndPoint.verifyStatusCode(200));
 

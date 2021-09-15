@@ -1,7 +1,6 @@
 package users;
 
 import endpoints.users.UsersEndPoint;
-import models.Model;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -9,14 +8,14 @@ import org.testng.asserts.SoftAssert;
 import utilities.Base;
 import utilities.endpointhelpers.JsonPayloadProvider;
 
-import static utilities.endpointhelpers.SchemaProvider.getUserSchemaPath;
+import static utilities.endpointhelpers.SchemaProvider.getUpdateUserSchemaPath;
 
 public class UpdateUserInfoTest extends Base {
     private UsersEndPoint usersEndPoint;
     private SoftAssert softAssert;
 
     @Test(dataProvider = "update data", groups = {"smoke"})
-    public void testName(Model payload, String schemaJsonPath) {
+    public void testName(String payload, String schemaJsonPath) {
         usersEndPoint = new UsersEndPoint(token);
         usersEndPoint.updateUserInfo(payload);
 
@@ -31,7 +30,7 @@ public class UpdateUserInfoTest extends Base {
     @DataProvider(name = "update data")
     public Object[][] updateUserDataProvider() {
         return new Object[][]{
-                {new JsonPayloadProvider().getCredentialsUserJson(), getUserSchemaPath()}
+                {new JsonPayloadProvider().getCredentialsUpdateUserJson(), getUpdateUserSchemaPath()}
         };
     }
 }

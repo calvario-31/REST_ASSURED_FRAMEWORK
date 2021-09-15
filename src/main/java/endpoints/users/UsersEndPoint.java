@@ -20,7 +20,7 @@ public class UsersEndPoint extends EndPoint {
         super();
     }
 
-    public UserResponseModel createUser(Model payload) {
+    public UserResponseModel createUser(String payload) {
         createNewRequest();
         assignBodyParameter(payload);
         Log.info("Calling register endpoint");
@@ -28,7 +28,7 @@ public class UsersEndPoint extends EndPoint {
         return getUserResponseBodyAsModel();
     }
 
-    public UserResponseModel loginUser(Model payload) {
+    public UserResponseModel loginUser(String payload) {
         createNewRequest();
         assignBodyParameter(payload);
         Log.info("Calling login endpoint");
@@ -43,7 +43,7 @@ public class UsersEndPoint extends EndPoint {
         return getUserResponseBodyAsModel();
     }
 
-    public UserResponseModel updateUserInfo(Model payload) {
+    public UserResponseModel updateUserInfo(String payload) {
         createNewRequest();
         Log.info("Calling update user info endpoint");
         assignBodyParameter(payload);

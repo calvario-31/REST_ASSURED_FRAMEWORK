@@ -2,7 +2,6 @@ package articles.comments;
 
 import endpoints.articles.ArticlesEndPoint;
 import endpoints.articles.CommentsEndPoint;
-import models.Model;
 import models.articles.ArticleResponseModel;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -18,7 +17,7 @@ public class CreateCommentTest extends Base {
     private ArticleResponseModel newArticleResponse;
 
     @Test(dataProvider = "comment data", groups = {"smoke"})
-    public void createCommentTest(Model payload, String schemaJsonPath) {
+    public void createCommentTest(String payload, String schemaJsonPath) {
         newArticleResponse = new ArticlesEndPoint(token).generateNewArticle().getArticle();
         commentsEndPoint = new CommentsEndPoint(token);
 

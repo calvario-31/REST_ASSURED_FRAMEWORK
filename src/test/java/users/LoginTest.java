@@ -1,7 +1,6 @@
 package users;
 
 import endpoints.users.UsersEndPoint;
-import models.Model;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -16,7 +15,7 @@ public class LoginTest extends Base {
     private SoftAssert softAssert;
 
     @Test(dataProvider = "credentials data", groups = {"smoke"})
-    public void loginTest(Model payload, String schemaJsonPath) {
+    public void loginTest(String payload, String schemaJsonPath) {
         usersEndPoint = new UsersEndPoint();
         usersEndPoint.createUser(payload);
         usersEndPoint.loginUser(payload);

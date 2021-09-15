@@ -1,7 +1,6 @@
 package articles;
 
 import endpoints.articles.ArticlesEndPoint;
-import models.Model;
 import models.articles.ArticleResponseModel;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -17,7 +16,7 @@ public class CreateArticleTest extends Base {
     private ArticleResponseModel articleResponse;
 
     @Test(dataProvider = "new article data", groups = {"smoke"})
-    public void createArticleTest(Model payload, String schemaJsonPath) {
+    public void createArticleTest(String payload, String schemaJsonPath) {
         articlesEndPoint = new ArticlesEndPoint(token);
 
         articleResponse = articlesEndPoint.createArticle(payload).getArticle();

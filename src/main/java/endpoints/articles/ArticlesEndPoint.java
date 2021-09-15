@@ -1,7 +1,6 @@
 package endpoints.articles;
 
 import endpoints.EndPoint;
-import models.Model;
 import models.articles.GetAllArticlesModel;
 import models.articles.GetArticleModel;
 import utilities.Log;
@@ -15,7 +14,7 @@ public class ArticlesEndPoint extends EndPoint {
         super(token);
     }
 
-    public GetArticleModel createArticle(Model payload) {
+    public GetArticleModel createArticle(String payload) {
         createNewRequest();
         assignBodyParameter(payload);
         Log.info("Calling create article endpoint");
@@ -45,7 +44,7 @@ public class ArticlesEndPoint extends EndPoint {
         return getAllArticlesResponseBodyAsModel();
     }
 
-    public GetArticleModel updateArticle(String articleId, Model payload) {
+    public GetArticleModel updateArticle(String articleId, String payload) {
         createNewRequest();
         assignArticleId(articleId);
         assignBodyParameter(payload);
