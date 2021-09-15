@@ -1,7 +1,6 @@
 package endpoints.users;
 
 import endpoints.EndPoint;
-import models.Model;
 import models.users.UserResponseModel;
 import org.testng.Assert;
 import utilities.Log;
@@ -51,7 +50,7 @@ public class UsersEndPoint extends EndPoint {
         return getUserResponseBodyAsModel();
     }
 
-    public UserResponseModel createNewUser() {
+    public UserResponseModel generateNewUser() {
         createNewRequest();
         assignBodyParameter(new JsonPayloadProvider().getCredentialsUserJson());
         apiCallManager(registerPath, POST);

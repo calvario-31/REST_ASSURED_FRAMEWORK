@@ -19,7 +19,7 @@ public class ProfileEndToEndTest extends Base {
     @Test(groups = {"smoke"})
     public void profileEndToEndTest() {
         usersEndPoint = new UsersEndPoint();
-        userToUnfollow = usersEndPoint.createNewUser();
+        userToUnfollow = usersEndPoint.generateNewUser();
 
         profileEndPoint = new ProfileEndPoint(token);
         profileEndPoint.getUserInfo(userToUnfollow.getUsername());

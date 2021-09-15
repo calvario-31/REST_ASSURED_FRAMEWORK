@@ -14,7 +14,7 @@ public abstract class Base {
     protected static String token;
 
     protected UserResponseModel generateNewUser() {
-        return new UsersEndPoint().createNewUser();
+        return new UsersEndPoint().generateNewUser();
     }
 
     @BeforeSuite(alwaysRun = true)

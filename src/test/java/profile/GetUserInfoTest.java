@@ -19,7 +19,7 @@ public class GetUserInfoTest extends Base {
     @Test(dataProvider = "get user info data", groups = {"smoke"})
     public void getUserInfoTest(String schemaJsonPath) {
         usersEndPoint = new UsersEndPoint();
-        userResponse = usersEndPoint.createNewUser();
+        userResponse = usersEndPoint.generateNewUser();
 
         profileEndPoint = new ProfileEndPoint(userResponse.getToken());
         profileEndPoint.getUserInfo(userResponse.getUsername());
