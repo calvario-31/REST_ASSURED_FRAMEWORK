@@ -1,8 +1,11 @@
 package endpoints.articles;
 
 import endpoints.EndPoint;
-import utilities.JsonPayloadProvider;
+import models.Model;
+import models.articles.GetAllArticlesModel;
+import models.articles.GetArticleModel;
 import utilities.Log;
+import utilities.endpointhelpers.JsonPayloadProvider;
 
 public class ArticlesEndPoint extends EndPoint {
     private final String articlePath = "articles";
@@ -12,11 +15,12 @@ public class ArticlesEndPoint extends EndPoint {
         super(token);
     }
 
-    public void createArticle(String payload) {
+    public GetArticleModel createArticle(Model payload) {
         createNewRequest();
         assignBodyParameter(payload);
         Log.info("Calling create article endpoint");
         apiCallManager(articlePath, POST);
+        return getArticleResponseBodyAsModel();
     }
 
     public void deleteArticle(String articleId) {
@@ -26,37 +30,43 @@ public class ArticlesEndPoint extends EndPoint {
         apiCallManager(articleIdPath, DELETE);
     }
 
-    public void getArticle(String articleId) {
+    public GetArticleModel getArticle(String articleId) {
         createNewRequest();
         assignArticleId(articleId);
         Log.info("Calling get article endpoint");
         apiCallManager(articleIdPath, GET);
+        return getArticleResponseBodyAsModel();
     }
 
-    public void getAllArticles() {
+    public GetAllArticlesModel getAllArticles() {
         createNewRequest();
         Log.info("Calling get all articles endpoint");
         apiCallManager(articlePath, GET);
+        return getAllArticlesResponseBodyAsModel();
     }
 
-    public void updateArticle(String payload, String articleId) {
+    public GetArticleModel updateArticle(String articleId, Model payload) {
         createNewRequest();
         assignArticleId(articleId);
         assignBodyParameter(payload);
         Log.info("Calling put articles endpoint");
         apiCallManager(articleIdPath, PUT);
+        return getArticleResponseBodyAsModel();
     }
 
-    public String getArticleId() {
-        return getFieldFromResponse("article.slug");
-    }
-
-    public String generateArticleId() {
-        createArticle(new JsonPayloadProvider().getArticleJson());
-        return getArticleId();
+    public GetArticleModel generateNewArticle() {
+        return createArticle(new JsonPayloadProvider().getArticleJson());
     }
 
     private void assignArticleId(String articleId) {
         assignPathParameter("articleId", articleId);
+    }
+
+    private GetArticleModel getArticleResponseBodyAsModel() {
+        return getResponseBody().as(GetArticleModel.class);
+    }
+
+    private GetAllArticlesModel getAllArticlesResponseBodyAsModel() {
+        return getResponseBody().as(GetAllArticlesModel.class);
     }
 }

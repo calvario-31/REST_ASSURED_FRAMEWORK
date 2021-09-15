@@ -1,6 +1,7 @@
 package endpoints.tags;
 
 import endpoints.EndPoint;
+import models.tags.TagsModel;
 import utilities.Log;
 
 public class TagsEndPoint extends EndPoint {
@@ -10,9 +11,14 @@ public class TagsEndPoint extends EndPoint {
         super();
     }
 
-    public void getTags() {
+    public TagsModel getTags() {
         createNewRequest();
         Log.info("Calling get tags endpoint");
         apiCallManager(tagsPath, GET);
+        return getTagsResponseBodyAsModel();
+    }
+
+    public TagsModel getTagsResponseBodyAsModel() {
+        return getResponseBody().as(TagsModel.class);
     }
 }

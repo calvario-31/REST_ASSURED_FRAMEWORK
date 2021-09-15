@@ -9,15 +9,15 @@
     {
       "articles": [
         {
-          "title": "Central Configuration Representative",
-          "slug": "central-configuration-representative-s26aux",
-          "body": "Debitis enim qui. Quo ea modi animi accusamus amet. Et eos cum. Atque beatae delectus dolorum aliquam voluptatem numquam. Cupiditate accusamus repellendus nihil modi hic laborum.",
-          "createdAt": "2021-09-14T01:09:03.181Z",
-          "updatedAt": "2021-09-14T01:09:03.181Z",
+          "title": "Request from Ken MB",
+          "slug": "request-from-ken-mb-kt58t0",
+          "body": "Cypress is cool",
+          "createdAt": "2021-09-14T20:06:45.964Z",
+          "updatedAt": "2021-09-14T20:06:45.964Z",
           "tagList": [],
-          "description": "Optio ducimus sed quisquam nihil repellendus.",
+          "description": "API testing from MB",
           "author": {
-            "username": "nulla288",
+            "username": "Kento",
             "bio": null,
             "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
             "following": false
@@ -26,15 +26,344 @@
           "favoritesCount": 0
         },
         {
-          "title": "Global Paradigm Producer",
-          "slug": "global-paradigm-producer-eubrqu",
-          "body": "Qui aut architecto. Quia eligendi voluptates consequatur ipsum esse. Laudantium eius sint dignissimos. Ipsum impedit amet eos ut nam id omnis ducimus.",
-          "createdAt": "2021-09-14T01:08:54.469Z",
-          "updatedAt": "2021-09-14T01:08:54.469Z",
-          "tagList": [],
-          "description": "Adipisci dolor nobis aperiam eos eum eum ipsam distinctio tenetur.",
+          "title": "Article created by Cypress test",
+          "slug": "article-created-by-cypress-test-ismjpx",
+          "body": "This article is created with Cypress. See code here: https://github.com/helenanull/cypress-example",
+          "createdAt": "2021-09-14T20:05:30.134Z",
+          "updatedAt": "2021-09-14T20:05:30.134Z",
+          "tagList": [
+            "test-automation",
+            "simple",
+            "cypress"
+          ],
+          "description": "https://github.com/helenanull/cypress-example",
           "author": {
-            "username": "nulla288",
+            "username": "cy743810714",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 1
+        },
+        {
+          "title": "Article created by Cypress test",
+          "slug": "article-created-by-cypress-test-sfuw67",
+          "body": "This article is created with Cypress. See code here: https://github.com/helenanull/cypress-example",
+          "createdAt": "2021-09-14T20:05:28.947Z",
+          "updatedAt": "2021-09-14T20:05:28.947Z",
+          "tagList": [
+            "test-automation",
+            "simple",
+            "cypress"
+          ],
+          "description": "https://github.com/helenanull/cypress-example",
+          "author": {
+            "username": "cy720238709",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        },
+        {
+          "title": "Article created by Cypress test",
+          "slug": "article-created-by-cypress-test-pj96p9",
+          "body": "This article is created with Cypress. See code here: https://github.com/helenanull/cypress-example",
+          "createdAt": "2021-09-14T20:05:12.854Z",
+          "updatedAt": "2021-09-14T20:05:12.854Z",
+          "tagList": [
+            "test-automation",
+            "simple",
+            "cypress"
+          ],
+          "description": "https://github.com/helenanull/cypress-example",
+          "author": {
+            "username": "cy988756817",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        },
+        {
+          "title": "Request from Ken MB",
+          "slug": "request-from-ken-mb-l17zqw",
+          "body": "Cypress is cool",
+          "createdAt": "2021-09-14T20:05:05.337Z",
+          "updatedAt": "2021-09-14T20:05:05.337Z",
+          "tagList": [],
+          "description": "API testing from MB",
+          "author": {
+            "username": "Kento",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        },
+        {
+          "title": "Article created by Cypress test",
+          "slug": "article-created-by-cypress-test-5xv6p5",
+          "body": "Test can edit an article. https://github.com/helenanull/cypress-example",
+          "createdAt": "2021-09-14T20:04:40.099Z",
+          "updatedAt": "2021-09-14T20:04:42.368Z",
+          "tagList": [
+            "test-automation",
+            "simple",
+            "cypress"
+          ],
+          "description": "https://github.com/helenanull/cypress-example",
+          "author": {
+            "username": "cy289822690",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 1
+        },
+        {
+          "title": "Article created by Cypress test",
+          "slug": "article-created-by-cypress-test-nfejmv",
+          "body": "This article is created with Cypress. See code here: https://github.com/helenanull/cypress-example",
+          "createdAt": "2021-09-14T20:04:39.030Z",
+          "updatedAt": "2021-09-14T20:04:39.030Z",
+          "tagList": [
+            "test-automation",
+            "simple",
+            "cypress"
+          ],
+          "description": "https://github.com/helenanull/cypress-example",
+          "author": {
+            "username": "cy813227574",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        },
+        {
+          "title": "My post title",
+          "slug": "my-post-title-zdqia1",
+          "body": "Simple automation project https://github.com/helenanull/cypress-example",
+          "createdAt": "2021-09-14T20:04:37.594Z",
+          "updatedAt": "2021-09-14T20:04:37.594Z",
+          "tagList": [
+            "test-automation",
+            "cypress"
+          ],
+          "description": "Cypress",
+          "author": {
+            "username": "cy417317802",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        },
+        {
+          "title": "My post title",
+          "slug": "my-post-title-yzq8od",
+          "body": "Simple automation project https://github.com/helenanull/cypress-example",
+          "createdAt": "2021-09-14T20:04:33.581Z",
+          "updatedAt": "2021-09-14T20:04:33.581Z",
+          "tagList": [],
+          "description": "Cypress",
+          "author": {
+            "username": "cy924581175",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        },
+        {
+          "title": "Dolor voluptatum ducimus vero consequatur.",
+          "slug": "eos-debitis-jsur09",
+          "body": "Tempore commodi beatae excepturi sed. Excepturi ut consequatur iusto ducimus atque eius. Quia eos doloremque explicabo. Deleniti ea officiis in nihil non dolor qui. Et quae pariatur officia harum aut.",
+          "createdAt": "2021-09-14T20:04:23.124Z",
+          "updatedAt": "2021-09-14T20:04:23.743Z",
+          "tagList": [],
+          "description": "Cumque molestias possimus aut odit dolorum et.",
+          "author": {
+            "username": "vgpdzl952e",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        },
+        {
+          "title": "Quia cumque commodi ut maxime.",
+          "slug": "quia-cumque-commodi-ut-maxime-vro6zj",
+          "body": "Et enim ipsa autem aut quo explicabo itaque. Quos deleniti animi beatae laboriosam sapiente est voluptatem. Ipsa cumque similique esse numquam.",
+          "createdAt": "2021-09-14T20:04:22.044Z",
+          "updatedAt": "2021-09-14T20:04:22.044Z",
+          "tagList": [],
+          "description": "Velit reprehenderit maiores exercitationem sit repellat quibusdam aut dolorem qui.",
+          "author": {
+            "username": "vgpdzl952e",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        },
+        {
+          "title": "Numquam libero non incidunt dolores.",
+          "slug": "numquam-libero-non-incidunt-dolores-enjswv",
+          "body": "Dolor magnam doloremque quaerat. Quibusdam voluptate assumenda possimus expedita et. Dolores sed est illum omnis quis. Voluptas pariatur ea maxime officia debitis facere tempore.",
+          "createdAt": "2021-09-14T20:04:07.582Z",
+          "updatedAt": "2021-09-14T20:04:07.582Z",
+          "tagList": [],
+          "description": "Ut harum rem porro esse quidem reprehenderit excepturi ut quae.",
+          "author": {
+            "username": "vgpdzl952e",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        },
+        {
+          "title": "Reiciendis nihil dolor distinctio facere voluptas.",
+          "slug": "reiciendis-nihil-dolor-distinctio-facere-voluptas-72unh3",
+          "body": "Facilis ut non aspernatur eos accusantium et. Nam qui perspiciatis est corporis similique totam. Beatae quam debitis recusandae voluptatem et quia repudiandae. Voluptatem illum odit et veritatis quo et quia. Et ut aperiam maiores harum in adipisci non.",
+          "createdAt": "2021-09-14T20:04:06.033Z",
+          "updatedAt": "2021-09-14T20:04:06.033Z",
+          "tagList": [],
+          "description": "Sint quae repellendus nihil earum.",
+          "author": {
+            "username": "vgpdzl952e",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 1
+        },
+        {
+          "title": "Et quae praesentium.",
+          "slug": "et-quae-praesentium-slhcp5",
+          "body": "Ut quibusdam autem. Ratione eum rem quia voluptas velit nisi omnis. Fugit non molestiae odio ut. Repellendus dolores asperiores qui aut.",
+          "createdAt": "2021-09-14T20:04:03.910Z",
+          "updatedAt": "2021-09-14T20:04:03.910Z",
+          "tagList": [],
+          "description": "Praesentium nostrum ipsa quis provident ipsa quasi nihil consectetur.",
+          "author": {
+            "username": "vgpdzl952e",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        },
+        {
+          "title": "Blanditiis voluptates.",
+          "slug": "blanditiis-voluptates-seatgv",
+          "body": "Natus mollitia et et commodi non. Voluptas optio maxime soluta nostrum illo nesciunt. Quia nesciunt fugiat in dignissimos eos eveniet voluptatum. Et esse voluptatum aut odit.",
+          "createdAt": "2021-09-14T20:04:02.374Z",
+          "updatedAt": "2021-09-14T20:04:02.374Z",
+          "tagList": [],
+          "description": "Quam porro excepturi aut sit occaecati ad repudiandae eum.",
+          "author": {
+            "username": "vgpdzl952e",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        },
+        {
+          "title": "Error ut ipsa fugiat laborum tenetur.",
+          "slug": "error-ut-ipsa-fugiat-laborum-tenetur-i55yj",
+          "body": "Velit animi atque ut. Veritatis impedit iusto. Veniam cupiditate occaecati deleniti. In deleniti vero illum hic voluptas blanditiis. Impedit aut odio magnam repellat fugiat dolorum nesciunt.",
+          "createdAt": "2021-09-14T20:03:59.999Z",
+          "updatedAt": "2021-09-14T20:03:59.999Z",
+          "tagList": [],
+          "description": "Laborum fuga aut voluptates quia modi eligendi.",
+          "author": {
+            "username": "vgpdzl952e",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        },
+        {
+          "title": "Delectus non sed blanditiis.",
+          "slug": "delectus-non-sed-blanditiis-a1zxrz",
+          "body": "Praesentium ut soluta minima in praesentium inventore adipisci. Vero aut accusamus. Aut assumenda rerum. Beatae quia et quis explicabo optio ipsam vitae.",
+          "createdAt": "2021-09-14T20:03:58.056Z",
+          "updatedAt": "2021-09-14T20:03:58.056Z",
+          "tagList": [],
+          "description": "Dolores officiis impedit dignissimos odit nemo possimus et.",
+          "author": {
+            "username": "vgpdzl952e",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        },
+        {
+          "title": "Request from Ken MB",
+          "slug": "request-from-ken-mb-r74sut",
+          "body": "Cypress is cool",
+          "createdAt": "2021-09-14T20:02:04.402Z",
+          "updatedAt": "2021-09-14T20:02:04.402Z",
+          "tagList": [],
+          "description": "API testing from MB",
+          "author": {
+            "username": "Kento",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 1
+        },
+        {
+          "title": "End to end testing with cypress",
+          "slug": "end-to-end-testing-with-cypress-d1dtzl",
+          "body": "This is the body of the Article",
+          "createdAt": "2021-09-14T19:39:15.226Z",
+          "updatedAt": "2021-09-14T19:39:15.226Z",
+          "tagList": [],
+          "description": "This is a description for an end to end testing using cypress",
+          "author": {
+            "username": "Kento",
+            "bio": null,
+            "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
+            "following": false
+          },
+          "favorited": false,
+          "favoritesCount": 0
+        },
+        {
+          "title": "Request from MB",
+          "slug": "request-from-mb-v1ftow",
+          "body": "Cypress is cool",
+          "createdAt": "2021-09-14T19:36:06.038Z",
+          "updatedAt": "2021-09-14T19:36:06.038Z",
+          "tagList": [],
+          "description": "API testing from MB",
+          "author": {
+            "username": "Kento",
             "bio": null,
             "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
             "following": false
@@ -60,15 +389,15 @@
       "examples": [
         [
           {
-            "title": "Central Configuration Representative",
-            "slug": "central-configuration-representative-s26aux",
-            "body": "Debitis enim qui. Quo ea modi animi accusamus amet. Et eos cum. Atque beatae delectus dolorum aliquam voluptatem numquam. Cupiditate accusamus repellendus nihil modi hic laborum.",
-            "createdAt": "2021-09-14T01:09:03.181Z",
-            "updatedAt": "2021-09-14T01:09:03.181Z",
+            "title": "Request from Ken MB",
+            "slug": "request-from-ken-mb-kt58t0",
+            "body": "Cypress is cool",
+            "createdAt": "2021-09-14T20:06:45.964Z",
+            "updatedAt": "2021-09-14T20:06:45.964Z",
             "tagList": [],
-            "description": "Optio ducimus sed quisquam nihil repellendus.",
+            "description": "API testing from MB",
             "author": {
-              "username": "nulla288",
+              "username": "Kento",
               "bio": null,
               "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
               "following": false
@@ -77,21 +406,25 @@
             "favoritesCount": 0
           },
           {
-            "title": "Global Paradigm Producer",
-            "slug": "global-paradigm-producer-eubrqu",
-            "body": "Qui aut architecto. Quia eligendi voluptates consequatur ipsum esse. Laudantium eius sint dignissimos. Ipsum impedit amet eos ut nam id omnis ducimus.",
-            "createdAt": "2021-09-14T01:08:54.469Z",
-            "updatedAt": "2021-09-14T01:08:54.469Z",
-            "tagList": [],
-            "description": "Adipisci dolor nobis aperiam eos eum eum ipsam distinctio tenetur.",
+            "title": "Article created by Cypress test",
+            "slug": "article-created-by-cypress-test-ismjpx",
+            "body": "This article is created with Cypress. See code here: https://github.com/helenanull/cypress-example",
+            "createdAt": "2021-09-14T20:05:30.134Z",
+            "updatedAt": "2021-09-14T20:05:30.134Z",
+            "tagList": [
+              "test-automation",
+              "simple",
+              "cypress"
+            ],
+            "description": "https://github.com/helenanull/cypress-example",
             "author": {
-              "username": "nulla288",
+              "username": "cy743810714",
               "bio": null,
               "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
               "following": false
             },
             "favorited": false,
-            "favoritesCount": 0
+            "favoritesCount": 1
           }
         ]
       ],
@@ -107,15 +440,15 @@
             "default": {},
             "examples": [
               {
-                "title": "Central Configuration Representative",
-                "slug": "central-configuration-representative-s26aux",
-                "body": "Debitis enim qui. Quo ea modi animi accusamus amet. Et eos cum. Atque beatae delectus dolorum aliquam voluptatem numquam. Cupiditate accusamus repellendus nihil modi hic laborum.",
-                "createdAt": "2021-09-14T01:09:03.181Z",
-                "updatedAt": "2021-09-14T01:09:03.181Z",
+                "title": "Request from Ken MB",
+                "slug": "request-from-ken-mb-kt58t0",
+                "body": "Cypress is cool",
+                "createdAt": "2021-09-14T20:06:45.964Z",
+                "updatedAt": "2021-09-14T20:06:45.964Z",
                 "tagList": [],
-                "description": "Optio ducimus sed quisquam nihil repellendus.",
+                "description": "API testing from MB",
                 "author": {
-                  "username": "nulla288",
+                  "username": "Kento",
                   "bio": null,
                   "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
                   "following": false
@@ -144,7 +477,7 @@
                 "description": "An explanation about the purpose of this instance.",
                 "default": "",
                 "examples": [
-                  "Central Configuration Representative"
+                  "Request from Ken MB"
                 ]
               },
               "slug": {
@@ -154,7 +487,7 @@
                 "description": "An explanation about the purpose of this instance.",
                 "default": "",
                 "examples": [
-                  "central-configuration-representative-s26aux"
+                  "request-from-ken-mb-kt58t0"
                 ]
               },
               "body": {
@@ -164,7 +497,7 @@
                 "description": "An explanation about the purpose of this instance.",
                 "default": "",
                 "examples": [
-                  "Debitis enim qui. Quo ea modi animi accusamus amet. Et eos cum. Atque beatae delectus dolorum aliquam voluptatem numquam. Cupiditate accusamus repellendus nihil modi hic laborum."
+                  "Cypress is cool"
                 ]
               },
               "createdAt": {
@@ -174,7 +507,7 @@
                 "description": "An explanation about the purpose of this instance.",
                 "default": "",
                 "examples": [
-                  "2021-09-14T01:09:03.181Z"
+                  "2021-09-14T20:06:45.964Z"
                 ]
               },
               "updatedAt": {
@@ -184,7 +517,7 @@
                 "description": "An explanation about the purpose of this instance.",
                 "default": "",
                 "examples": [
-                  "2021-09-14T01:09:03.181Z"
+                  "2021-09-14T20:06:45.964Z"
                 ]
               },
               "tagList": {
@@ -208,7 +541,7 @@
                 "description": "An explanation about the purpose of this instance.",
                 "default": "",
                 "examples": [
-                  "Optio ducimus sed quisquam nihil repellendus."
+                  "API testing from MB"
                 ]
               },
               "author": {
@@ -219,7 +552,7 @@
                 "default": {},
                 "examples": [
                   {
-                    "username": "nulla288",
+                    "username": "Kento",
                     "bio": null,
                     "image": "https://static.productionready.io/images/smiley-cyrus.jpg",
                     "following": false
@@ -239,7 +572,7 @@
                     "description": "An explanation about the purpose of this instance.",
                     "default": "",
                     "examples": [
-                      "nulla288"
+                      "Kento"
                     ]
                   },
                   "bio": {

@@ -1,21 +1,25 @@
 package models.articles;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.github.javafaker.Faker;
 import models.Model;
 
-public class ArticleModel extends Model {
+@JsonTypeName("article")
+@JsonTypeInfo(include= JsonTypeInfo.As.WRAPPER_OBJECT,use= JsonTypeInfo.Id.NAME)
+public class ArticlePayloadModel extends Model {
     private String title;
     private String description;
     private String body;
 
-    public ArticleModel() {
+    public ArticlePayloadModel() {
         Faker faker = new Faker();
         title = faker.lorem().sentence(2);
         description = faker.lorem().sentence(5);
         body = faker.lorem().paragraph();
     }
 
-    public ArticleModel(String title, String description, String body) {
+    public ArticlePayloadModel(String title, String description, String body) {
         this.title = title;
         this.description = description;
         this.body = body;

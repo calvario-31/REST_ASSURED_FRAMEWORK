@@ -1,4 +1,4 @@
-package utilities;
+package utilities.endpointhelpers;
 
 import io.restassured.filter.Filter;
 import io.restassured.filter.FilterContext;
@@ -6,6 +6,7 @@ import io.restassured.internal.support.Prettifier;
 import io.restassured.response.Response;
 import io.restassured.specification.FilterableRequestSpecification;
 import io.restassured.specification.FilterableResponseSpecification;
+import utilities.Log;
 
 public class RequestFilter implements Filter {
 

@@ -8,12 +8,15 @@ import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import io.restassured.response.ResponseBody;
 import io.restassured.specification.RequestSpecification;
+import models.Model;
 import utilities.Log;
-import utilities.RequestFilter;
+import utilities.endpointhelpers.RequestFilter;
 
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.util.List;
 
 public abstract class EndPoint {
     protected final String GET = "GET";
@@ -57,12 +60,20 @@ public abstract class EndPoint {
         request.header(key, value);
     }
 
-    protected void assignBodyParameter(String json) {
-        request.body(json);
+    protected void assignBodyParameter(Model model) {
+        request.body(model);
     }
 
     protected void assignPathParameter(String key, String path) {
         request.pathParam(key, path);
+    }
+
+    protected ResponseBody getResponseBody() {
+        return response.getBody();
+    }
+
+    protected List<Model> getResponseBodyList(String path) {
+        return response.jsonPath().getList(path);
     }
 
     protected void apiCallManager(String url, String method) {

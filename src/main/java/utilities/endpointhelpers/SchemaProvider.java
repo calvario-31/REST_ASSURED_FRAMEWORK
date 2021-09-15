@@ -1,4 +1,4 @@
-package utilities;
+package utilities.endpointhelpers;
 
 public class SchemaProvider {
     private static final String userSchemaPath = "schemas/users/userSchema.json";
@@ -7,6 +7,7 @@ public class SchemaProvider {
     private static final String allArticlesSchemaPath = "schemas/articles/allArticlesSchema.json";
     private static final String commentSchemaPath = "schemas/articles/comments/commentSchema.json";
     private static final String allCommentsSchemaPath = "schemas/articles/comments/allCommentsSchema.json";
+    private static final String profileSchemaPath = "schemas/profile/profileSchema.json";
 
     public static String getUserSchemaPath() {
         return userSchemaPath;
@@ -30,5 +31,9 @@ public class SchemaProvider {
 
     public static String getAllCommentsSchemaPath() {
         return allCommentsSchemaPath;
+    }
+
+    public static String getProfileSchemaPath() {
+        return profileSchemaPath;
     }
 }

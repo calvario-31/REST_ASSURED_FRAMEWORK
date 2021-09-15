@@ -1,9 +1,11 @@
 package endpoints.users;
 
 import endpoints.EndPoint;
+import models.Model;
+import models.users.UserResponseModel;
 import org.testng.Assert;
-import utilities.JsonPayloadProvider;
 import utilities.Log;
+import utilities.endpointhelpers.JsonPayloadProvider;
 
 public class UsersEndPoint extends EndPoint {
     private final String registerPath = "users";
@@ -18,39 +20,47 @@ public class UsersEndPoint extends EndPoint {
         super();
     }
 
-    public void createUser(String newUserJson) {
+    public UserResponseModel createUser(Model payload) {
         createNewRequest();
-        assignBodyParameter(newUserJson);
+        assignBodyParameter(payload);
         Log.info("Calling register endpoint");
         apiCallManager(registerPath, POST);
+        return getUserResponseBodyAsModel();
     }
 
-    public void loginUser(String credentialsJson) {
+    public UserResponseModel loginUser(Model payload) {
         createNewRequest();
-        assignBodyParameter(credentialsJson);
+        assignBodyParameter(payload);
         Log.info("Calling login endpoint");
         apiCallManager(loginPath, POST);
+        return getUserResponseBodyAsModel();
     }
 
-    public void getCurrentUserInfo() {
+    public UserResponseModel getCurrentUserInfo() {
         createNewRequest();
         Log.info("Calling get user info endpoint");
         apiCallManager(userPath, GET);
+        return getUserResponseBodyAsModel();
     }
 
-    public void updateUserInfo(String updateUserJson) {
+    public UserResponseModel updateUserInfo(Model payload) {
         createNewRequest();
         Log.info("Calling update user info endpoint");
-        assignBodyParameter(updateUserJson);
+        assignBodyParameter(payload);
         apiCallManager(userPath, PUT);
+        return getUserResponseBodyAsModel();
     }
 
-    public String generateToken() {
+    public UserResponseModel createNewUser() {
         createNewRequest();
-        assignBodyParameter(new JsonPayloadProvider().getUserJson());
+        assignBodyParameter(new JsonPayloadProvider().getCredentialsUserJson());
         apiCallManager(registerPath, POST);
         Log.info("Getting token from the response");
         Assert.assertTrue(verifyStatusCode(200));
-        return getFieldFromResponse("user.token");
+        return getUserResponseBodyAsModel();
+    }
+
+    public UserResponseModel getUserResponseBodyAsModel() {
+        return getResponseBody().as(UserResponseModel.class);
     }
 }

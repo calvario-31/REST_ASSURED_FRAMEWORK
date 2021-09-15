@@ -1,8 +1,13 @@
 package models.users;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.github.javafaker.Faker;
+import models.Model;
 
-public class UpdateUserModel {
+@JsonTypeName("user")
+@JsonTypeInfo(include= JsonTypeInfo.As.WRAPPER_OBJECT,use= JsonTypeInfo.Id.NAME)
+public class UpdateUserModel extends Model {
     private String username;
     private String email;
     private String password;
