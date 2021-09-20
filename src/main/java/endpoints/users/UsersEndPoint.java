@@ -50,14 +50,6 @@ public class UsersEndPoint extends EndPoint {
         return getUserResponseBodyAsModel();
     }
 
-    public UserResponseModel generateNewUser() {
-        createNewRequest();
-        assignBodyParameter(new JsonPayloadProvider().getCredentialsUserJson());
-        apiCallManager(registerPath, POST);
-        Log.info("Getting token from the response");
-        Assert.assertTrue(verifyStatusCode(200));
-        return getUserResponseBodyAsModel();
-    }
 
     public UserResponseModel getUserResponseBodyAsModel() {
         return getResponseBody().as(UserResponseModel.class);

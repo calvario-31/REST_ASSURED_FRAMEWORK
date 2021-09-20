@@ -1,21 +1,23 @@
 package articles;
 
 import endpoints.articles.ArticlesEndPoint;
-import models.articles.ArticleResponseModel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.Base;
+import utilities.Commons;
 
 public class DeleteArticleTest extends Base {
     private ArticlesEndPoint articlesEndPoint;
-    private ArticleResponseModel articleResponse;
+    private String articleId;
 
     @Test(groups = {"regression"})
     public void deleteArticleTest() {
-        articlesEndPoint = new ArticlesEndPoint(token);
-        articleResponse =  articlesEndPoint.generateNewArticle();
+        commons = new Commons();
+        token = commons.generateNewUser().getToken();
+        articleId = commons.generateNewArticle(token).getSlug();
 
-        articlesEndPoint.deleteArticle(articleResponse.getSlug());
+        articlesEndPoint = new ArticlesEndPoint(token);
+        articlesEndPoint.deleteArticle(articleId);
 
         Assert.assertTrue(articlesEndPoint.verifyStatusCode(200));
         Assert.assertTrue(articlesEndPoint.getResponseTime() < 8000L);

@@ -5,7 +5,6 @@ import models.articles.CommentResponseModel;
 import models.articles.GetAllCommentsModel;
 import models.articles.GetCommentModel;
 import utilities.Log;
-import utilities.endpointhelpers.JsonPayloadProvider;
 
 public class CommentsEndPoint extends EndPoint {
     private final String commentPath = "articles/{articleId}/comments";
@@ -38,10 +37,6 @@ public class CommentsEndPoint extends EndPoint {
         assignIdComment(String.valueOf(idComment));
         Log.info("Calling delete comment endpoint");
         apiCallManager(commentIdPath, DELETE);
-    }
-
-    public CommentResponseModel generateComment(String articleId) {
-        return createComment(articleId,  new JsonPayloadProvider().getCommentJson());
     }
 
     private void assignArticleId(String articleId) {

@@ -2,25 +2,28 @@ package profile.follow;
 
 import endpoints.profile.FollowUserEndPoint;
 import models.profiles.ProfileModel;
-import models.users.UserResponseModel;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Base;
+import utilities.Commons;
 
 import static utilities.endpointhelpers.SchemaProvider.getProfileSchemaPath;
 
 public class FollowUserTest extends Base {
     private FollowUserEndPoint followUserEndPoint;
-    private UserResponseModel userToFollow;
+    private String usernameToFollow;
     private ProfileModel profileResponse;
 
     @Test(dataProvider = "get user info data", groups = {"regression"})
     public void followUserTest(String schemaJsonPath) {
-        userToFollow = generateNewUser();
+        commons = new Commons();
+        token = commons.generateNewUser().getToken();
+        usernameToFollow = commons.generateNewUser().getUsername();
+
         followUserEndPoint = new FollowUserEndPoint(token);
-        profileResponse = followUserEndPoint.followUser(userToFollow.getUsername());
+        profileResponse = followUserEndPoint.followUser(usernameToFollow);
 
         Assert.assertTrue(followUserEndPoint.verifyStatusCode(200));
         softAssert = new SoftAssert();

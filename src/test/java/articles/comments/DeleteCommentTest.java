@@ -1,39 +1,30 @@
 package articles.comments;
 
-import endpoints.articles.ArticlesEndPoint;
 import endpoints.articles.CommentsEndPoint;
-import models.articles.ArticleResponseModel;
-import models.articles.CommentResponseModel;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Base;
-import utilities.endpointhelpers.JsonPayloadProvider;
+import utilities.Commons;
 
 public class DeleteCommentTest extends Base {
     private CommentsEndPoint commentsEndPoint;
-    private CommentResponseModel commentResponse;
-    private ArticleResponseModel newArticleResponse;
+    private String articleId;
+    private int commentId;
 
-    @Test(dataProvider = "comment data", groups = {"regression"})
-    public void testName(String payload) {
-        newArticleResponse = new ArticlesEndPoint(token).generateNewArticle();
+    @Test(groups = {"regression"})
+    public void testName() {
+        commons = new Commons();
+        token = commons.generateNewUser().getToken();
+        articleId = commons.generateNewArticle(token).getSlug();
+        commentId = commons.generateComment(token, articleId).getId();
+
         commentsEndPoint = new CommentsEndPoint(token);
-        commentResponse = commentsEndPoint.createComment(newArticleResponse.getSlug(), payload);
-
-        commentsEndPoint.deleteComment(newArticleResponse.getSlug(), commentResponse.getId());
+        commentsEndPoint.deleteComment(articleId, commentId);
 
         Assert.assertTrue(commentsEndPoint.verifyStatusCode(200));
         softAssert = new SoftAssert();
         softAssert.assertTrue(commentsEndPoint.getResponseTime() < 8000L);
         softAssert.assertAll();
-    }
-
-    @DataProvider(name = "comment data")
-    public Object[][] deleteCommentDataProvider() {
-        return new Object[][]{
-                {new JsonPayloadProvider().getCommentJson()}
-        };
     }
 }

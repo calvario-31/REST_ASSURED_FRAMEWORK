@@ -2,37 +2,36 @@ package profile;
 
 import endpoints.profile.FollowUserEndPoint;
 import endpoints.profile.ProfileEndPoint;
-import endpoints.users.UsersEndPoint;
 import models.profiles.ProfileModel;
-import models.users.UserResponseModel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.Base;
+import utilities.Commons;
 
 public class ProfileEndToEndTest extends Base {
-    private UsersEndPoint usersEndPoint;
     private ProfileEndPoint profileEndPoint;
     private FollowUserEndPoint followUserEndPoint;
-    private UserResponseModel userToUnfollow;
     private ProfileModel profileResponse;
+    private String usernameToFollow;
 
     @Test(groups = {"smoke"})
     public void profileEndToEndTest() {
-        usersEndPoint = new UsersEndPoint();
-        userToUnfollow = usersEndPoint.generateNewUser();
+        commons = new Commons();
+        token = commons.generateNewUser().getToken();
+        usernameToFollow = commons.generateNewUser().getUsername();
 
         profileEndPoint = new ProfileEndPoint(token);
-        profileEndPoint.getUserInfo(userToUnfollow.getUsername());
+        profileEndPoint.getUserInfo(usernameToFollow);
 
         Assert.assertTrue(profileEndPoint.verifyStatusCode(200));
 
         followUserEndPoint = new FollowUserEndPoint(token);
-        profileResponse = followUserEndPoint.followUser(userToUnfollow.getUsername());
+        profileResponse = followUserEndPoint.followUser(usernameToFollow);
 
         Assert.assertTrue(followUserEndPoint.verifyStatusCode(200));
         Assert.assertTrue(profileResponse.isFollowing());
 
-        profileResponse = followUserEndPoint.unfollowUser(userToUnfollow.getUsername());
+        profileResponse = followUserEndPoint.unfollowUser(usernameToFollow);
 
         Assert.assertTrue(followUserEndPoint.verifyStatusCode(200));
         Assert.assertFalse(profileResponse.isFollowing());

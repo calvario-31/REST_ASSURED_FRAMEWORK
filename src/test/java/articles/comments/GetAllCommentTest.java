@@ -1,38 +1,31 @@
 package articles.comments;
 
-import endpoints.articles.ArticlesEndPoint;
 import endpoints.articles.CommentsEndPoint;
-import models.articles.ArticleResponseModel;
-import models.articles.CommentResponseModel;
-import models.articles.GetAllCommentsModel;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Base;
-import utilities.Log;
+import utilities.Commons;
 
 import static utilities.endpointhelpers.SchemaProvider.getAllCommentsSchemaPath;
 
 public class GetAllCommentTest extends Base {
     private CommentsEndPoint commentsEndPoint;
-    private ArticleResponseModel newArticleResponse;
-    private GetAllCommentsModel allCommentsResponse;
+    private String articleId;
 
     @Test(dataProvider = "comment data", groups = {"regression"})
     public void getCommentTest(String schemaJsonPath) {
-        newArticleResponse = new ArticlesEndPoint(token).generateNewArticle();
-        commentsEndPoint = new CommentsEndPoint(token);
+        commons = new Commons();
+        token = commons.generateNewUser().getToken();
+        articleId = commons.generateNewArticle(token).getSlug();
 
         for(int i =0; i<10; i++) {
-            commentsEndPoint.generateComment(newArticleResponse.getSlug());
+            commons.generateComment(token, articleId);
         }
 
-        allCommentsResponse = commentsEndPoint.getComments(newArticleResponse.getSlug());
-
-        for(CommentResponseModel comment: allCommentsResponse.getComments()) {
-            Log.debug(comment.getBody());
-        }
+        commentsEndPoint = new CommentsEndPoint(token);
+        commentsEndPoint.getComments(articleId);
 
         Assert.assertTrue(commentsEndPoint.verifyStatusCode(200));
         softAssert = new SoftAssert();

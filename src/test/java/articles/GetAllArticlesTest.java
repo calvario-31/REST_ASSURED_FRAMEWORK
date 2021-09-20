@@ -1,26 +1,22 @@
 package articles;
 
 import endpoints.articles.ArticlesEndPoint;
-import models.articles.ArticleResponseModel;
-import models.articles.GetAllArticlesModel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Base;
-import utilities.Log;
+import utilities.Commons;
 
 public class GetAllArticlesTest extends Base {
     private ArticlesEndPoint articlesEndPoint;
-    private GetAllArticlesModel articleResponse;
 
     @Test(groups = {"regression"})
     public void getAllArticlesTest() {
-        articlesEndPoint = new ArticlesEndPoint(token);
-        articleResponse = articlesEndPoint.getAllArticles();
+        commons = new Commons();
+        token = commons.generateNewUser().getToken();
 
-        for(ArticleResponseModel articleResponseModel: articleResponse.getArticles()){
-            Log.debug(articleResponseModel.getSlug());
-        }
+        articlesEndPoint = new ArticlesEndPoint(token);
+        articlesEndPoint.getAllArticles();
 
         Assert.assertTrue(articlesEndPoint.verifyStatusCode(200));
         softAssert = new SoftAssert();

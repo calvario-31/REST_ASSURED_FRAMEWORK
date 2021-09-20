@@ -5,7 +5,6 @@ import models.articles.ArticleResponseModel;
 import models.articles.GetAllArticlesModel;
 import models.articles.GetArticleModel;
 import utilities.Log;
-import utilities.endpointhelpers.JsonPayloadProvider;
 
 public class ArticlesEndPoint extends EndPoint {
     private final String articlePath = "articles";
@@ -52,10 +51,6 @@ public class ArticlesEndPoint extends EndPoint {
         Log.info("Calling put articles endpoint");
         apiCallManager(articleIdPath, PUT);
         return getArticleResponseBodyAsModel();
-    }
-
-    public ArticleResponseModel generateNewArticle() {
-        return createArticle(new JsonPayloadProvider().getArticleJson());
     }
 
     private void assignArticleId(String articleId) {

@@ -1,6 +1,5 @@
 package articles.favorites;
 
-import endpoints.articles.ArticlesEndPoint;
 import endpoints.articles.FavoriteEndPoint;
 import models.articles.ArticleResponseModel;
 import org.testng.Assert;
@@ -8,20 +7,23 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Base;
+import utilities.Commons;
 
 import static utilities.endpointhelpers.SchemaProvider.getArticleSchemaPath;
 
 public class FavoriteArticleTest extends Base {
     private FavoriteEndPoint favoriteEndPoint;
     private ArticleResponseModel articleResponse;
-    private ArticleResponseModel newArticleResponse;
+    private String articleId;
 
     @Test(dataProvider = "article data", groups = {"regression"})
     public void favoriteArticleTest(String schemaJsonPath) {
-        newArticleResponse = new ArticlesEndPoint(token).generateNewArticle();
-        favoriteEndPoint = new FavoriteEndPoint(token);
+        commons = new Commons();
+        token = commons.generateNewUser().getToken();
+        articleId = commons.generateNewArticle(token).getSlug();
 
-        articleResponse = favoriteEndPoint.favoriteArticle(newArticleResponse.getSlug());
+        favoriteEndPoint = new FavoriteEndPoint(token);
+        articleResponse = favoriteEndPoint.favoriteArticle(articleId);
 
         Assert.assertTrue(favoriteEndPoint.verifyStatusCode(200));
         softAssert = new SoftAssert();

@@ -1,23 +1,25 @@
 package users;
 
 import endpoints.users.UsersEndPoint;
-import models.users.UserResponseModel;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Base;
+import utilities.Commons;
 
 import static utilities.endpointhelpers.SchemaProvider.getUserSchemaPath;
 
 public class GetUserInfoTestTest extends Base {
     private UsersEndPoint usersEndPoint;
-    private UserResponseModel userResponse;
 
     @Test(dataProvider = "credentials data", groups = {"regression"})
     public void getUserInfoTest(String schemaJsonPath) {
+        commons = new Commons();
+        token = commons.generateNewUser().getToken();
+
         usersEndPoint = new UsersEndPoint(token);
-        userResponse = usersEndPoint.getCurrentUserInfo();
+        usersEndPoint.getCurrentUserInfo();
 
         Assert.assertTrue(usersEndPoint.verifyStatusCode(200));
 

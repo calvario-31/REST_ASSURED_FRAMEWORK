@@ -1,28 +1,27 @@
 package profile;
 
 import endpoints.profile.ProfileEndPoint;
-import endpoints.users.UsersEndPoint;
-import models.users.UserResponseModel;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Base;
+import utilities.Commons;
 
 import static utilities.endpointhelpers.SchemaProvider.getProfileSchemaPath;
 
 public class GetUserInfoTest extends Base {
-    private UsersEndPoint usersEndPoint;
     private ProfileEndPoint profileEndPoint;
-    private UserResponseModel userResponse;
+    private String usernameToGetInfo;
 
     @Test(dataProvider = "get user info data", groups = {"smoke"})
     public void getUserInfoTest(String schemaJsonPath) {
-        usersEndPoint = new UsersEndPoint();
-        userResponse = usersEndPoint.generateNewUser();
+        commons = new Commons();
+        token = commons.generateNewUser().getToken();
+        usernameToGetInfo = commons.generateNewUser().getUsername();
 
-        profileEndPoint = new ProfileEndPoint(userResponse.getToken());
-        profileEndPoint.getUserInfo(userResponse.getUsername());
+        profileEndPoint = new ProfileEndPoint(token);
+        profileEndPoint.getUserInfo(usernameToGetInfo);
 
         Assert.assertTrue(profileEndPoint.verifyStatusCode(200));
         softAssert = new SoftAssert();

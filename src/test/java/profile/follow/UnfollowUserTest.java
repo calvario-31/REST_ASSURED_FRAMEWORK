@@ -2,27 +2,29 @@ package profile.follow;
 
 import endpoints.profile.FollowUserEndPoint;
 import models.profiles.ProfileModel;
-import models.users.UserResponseModel;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import utilities.Base;
+import utilities.Commons;
 
 import static utilities.endpointhelpers.SchemaProvider.getProfileSchemaPath;
 
 public class UnfollowUserTest extends Base {
     private FollowUserEndPoint followUserEndPoint;
     private ProfileModel profileResponse;
-    private UserResponseModel userToUnfollow;
+    private String usernameToUnfollow;
 
     @Test(dataProvider = "get user info data", groups = {"regression"})
     public void unfollowUserTest(String schemaJsonPath) {
-        userToUnfollow = generateNewUser();
-        followUserEndPoint = new FollowUserEndPoint(userToUnfollow.getToken());
-        followUserEndPoint.followUser(userToUnfollow.getUsername());
+        commons = new Commons();
+        token = commons.generateNewUser().getToken();
+        usernameToUnfollow = commons.generateNewUser().getUsername();
 
-        profileResponse = followUserEndPoint.unfollowUser(userToUnfollow.getUsername());
+        followUserEndPoint = new FollowUserEndPoint(token);
+        followUserEndPoint.followUser(usernameToUnfollow);
+        profileResponse = followUserEndPoint.unfollowUser(usernameToUnfollow);
 
         Assert.assertTrue(followUserEndPoint.verifyStatusCode(200));
         softAssert = new SoftAssert();

@@ -2,12 +2,11 @@ package articles;
 
 import endpoints.articles.ArticlesEndPoint;
 import endpoints.articles.CommentsEndPoint;
-import models.articles.ArticleResponseModel;
-import models.articles.CommentResponseModel;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import utilities.Base;
+import utilities.Commons;
 import utilities.endpointhelpers.JsonPayloadProvider;
 
 import java.util.ArrayList;
@@ -16,20 +15,22 @@ import java.util.List;
 public class ArticleEndToEndTest extends Base {
     private ArticlesEndPoint articlesEndPoint;
     private CommentsEndPoint commentsEndPoint;
-    private CommentResponseModel commentResponseModel;
-    private ArticleResponseModel articleResponse;
+    private String articleId;
 
     @Test(dataProvider = "article data", groups = {"smoke"})
-    public void articleEndToEndTest(String payloadUpdateArticle) {
+    public void articleEndToEndTest(String payloadCreateArticle, String payloadUpdateArticle, String payloadComment) {
+        commons = new Commons();
+        token = commons.generateNewUser().getToken();
+
         articlesEndPoint = new ArticlesEndPoint(token);
         //create
-        articleResponse = articlesEndPoint.generateNewArticle();
+        articleId = articlesEndPoint.createArticle(payloadCreateArticle).getSlug();
         Assert.assertTrue(articlesEndPoint.verifyStatusCode(200));
         //update
-        articleResponse = articlesEndPoint.updateArticle(articleResponse.getSlug(), payloadUpdateArticle);
+        articlesEndPoint.updateArticle(articleId, payloadUpdateArticle);
         Assert.assertTrue(articlesEndPoint.verifyStatusCode(200));
         //get
-        articlesEndPoint.getArticle(articleResponse.getSlug());
+        articlesEndPoint.getArticle(articleId);
         Assert.assertTrue(articlesEndPoint.verifyStatusCode(200));
         //get all
         articlesEndPoint.getAllArticles();
@@ -39,21 +40,21 @@ public class ArticleEndToEndTest extends Base {
 
         List<Integer> createdIdListed = new ArrayList<>();
         for(int i =0; i<10; i++) {
-            commentResponseModel = commentsEndPoint.generateComment(articleResponse.getSlug());
+            int commentId = commentsEndPoint.createComment(articleId, payloadComment).getId();
             Assert.assertTrue(commentsEndPoint.verifyStatusCode(200));
-            createdIdListed.add(commentResponseModel.getId());
+            createdIdListed.add(commentId);
         }
 
         //get all comments
-        commentsEndPoint.getComments(articleResponse.getSlug());
+        commentsEndPoint.getComments(articleId);
         Assert.assertTrue(commentsEndPoint.verifyStatusCode(200));
         //delete comment
         for(int id: createdIdListed) {
-            commentsEndPoint.deleteComment(articleResponse.getSlug(), id);
+            commentsEndPoint.deleteComment(articleId, id);
             Assert.assertTrue(commentsEndPoint.verifyStatusCode(200));
         }
         //delete article
-        articlesEndPoint.deleteArticle(articleResponse.getSlug());
+        articlesEndPoint.deleteArticle(articleId);
         Assert.assertTrue(articlesEndPoint.verifyStatusCode(200));
     }
 
@@ -61,7 +62,8 @@ public class ArticleEndToEndTest extends Base {
     public Object[][] createArticleDataProvider() {
         JsonPayloadProvider jsonPayloadProvider = new JsonPayloadProvider();
         return new Object[][]{
-                {jsonPayloadProvider.getArticleJson()}
+                {jsonPayloadProvider.getArticleJson(), jsonPayloadProvider.getArticleJson(),
+                        jsonPayloadProvider.getCommentJson()}
         };
     }
 }

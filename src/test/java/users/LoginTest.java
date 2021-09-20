@@ -18,6 +18,7 @@ public class LoginTest extends Base {
     public void loginTest(String payload, String schemaJsonPath) {
         usersEndPoint = new UsersEndPoint();
         usersEndPoint.createUser(payload);
+
         usersEndPoint.loginUser(payload);
 
         Assert.assertTrue(usersEndPoint.verifyStatusCode(200));
