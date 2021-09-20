@@ -32,7 +32,7 @@ public class FavoriteEndPoint extends EndPoint {
         assignPathParameter("articleId", articleId);
     }
 
-    public ArticleResponseModel getArticleResponseBodyAsModel() {
+    private ArticleResponseModel getArticleResponseBodyAsModel() {
         return getResponseBody().as(GetArticleModel.class).getArticle();
     }
 }

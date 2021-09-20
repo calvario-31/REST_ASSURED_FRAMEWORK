@@ -19,7 +19,7 @@ public class ProfileEndPoint extends EndPoint {
         return getProfileResponseBodyAsModel();
     }
 
-    public void assignUsername(String username) {
+    private void assignUsername(String username) {
         assignPathParameter("userName", username);
     }
 

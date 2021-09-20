@@ -49,7 +49,7 @@ public class UsersEndPoint extends EndPoint {
     }
 
 
-    public UserResponseModel getUserResponseBodyAsModel() {
+    private UserResponseModel getUserResponseBodyAsModel() {
         return getResponseBody().as(UserResponseModel.class);
     }
 }

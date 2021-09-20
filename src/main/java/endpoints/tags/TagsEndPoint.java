@@ -18,7 +18,7 @@ public class TagsEndPoint extends EndPoint {
         return getTagsResponseBodyAsModel();
     }
 
-    public TagsModel getTagsResponseBodyAsModel() {
+    private TagsModel getTagsResponseBodyAsModel() {
         return getResponseBody().as(TagsModel.class);
     }
 }
