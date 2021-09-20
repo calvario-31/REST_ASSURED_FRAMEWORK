@@ -19,11 +19,11 @@ public class RegisterTest extends Base {
         usersEndPoint = new UsersEndPoint();
         usersEndPoint.createUser(payload);
 
-        Assert.assertTrue(usersEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(usersEndPoint.verifyStatusCode(200), "status code failed");
 
         softAssert = new SoftAssert();
-        softAssert.assertTrue(usersEndPoint.getResponseTime() < 8000L);
-        softAssert.assertTrue(usersEndPoint.verifySchema(schemaJsonPath));
+        softAssert.assertTrue(usersEndPoint.getResponseTime() < 8000L, "response time too long");
+        softAssert.assertTrue(usersEndPoint.verifySchema(schemaJsonPath), "schema validation failed");
         softAssert.assertAll();
     }
 

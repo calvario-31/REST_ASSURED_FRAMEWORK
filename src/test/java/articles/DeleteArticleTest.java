@@ -19,7 +19,7 @@ public class DeleteArticleTest extends Base {
         articlesEndPoint = new ArticlesEndPoint(token);
         articlesEndPoint.deleteArticle(articleId);
 
-        Assert.assertTrue(articlesEndPoint.verifyStatusCode(200));
-        Assert.assertTrue(articlesEndPoint.getResponseTime() < 8000L);
+        Assert.assertTrue(articlesEndPoint.verifyStatusCode(200), "status code failed");
+        Assert.assertTrue(articlesEndPoint.getResponseTime() < 8000L, "response time too long");
     }
 }

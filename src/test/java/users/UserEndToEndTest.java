@@ -17,29 +17,30 @@ public class UserEndToEndTest extends Base {
         usersEndPoint = new UsersEndPoint();
         usersEndPoint.createUser(payloadCreation);
 
-        Assert.assertTrue(usersEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(usersEndPoint.verifyStatusCode(200), "status code failed");
 
         userResponse = usersEndPoint.loginUser(payloadCreation);
 
-        Assert.assertTrue(usersEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(usersEndPoint.verifyStatusCode(200), "status code failed");
 
         usersEndPoint = new UsersEndPoint(userResponse.getToken());
 
         usersEndPoint.updateUserInfo(payloadUpdate);
 
-        Assert.assertTrue(usersEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(usersEndPoint.verifyStatusCode(200), "status code failed");
 
         usersEndPoint.getCurrentUserInfo();
 
-        Assert.assertTrue(usersEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(usersEndPoint.verifyStatusCode(200), "status code failed");
 
     }
 
     @DataProvider(name = "user data")
-    public Object[][] userDataprovider() {
+    public Object[][] userDataProvider() {
         JsonPayloadProvider jsonPayloadProvider = new JsonPayloadProvider();
         return new Object[][]{
-                {jsonPayloadProvider.getCredentialsUserJson(), jsonPayloadProvider.getCredentialsUpdateUserJson()}
+                {jsonPayloadProvider.getCredentialsUserJson(),
+                        jsonPayloadProvider.getCredentialsUpdateUserJson()}
         };
     }
 }

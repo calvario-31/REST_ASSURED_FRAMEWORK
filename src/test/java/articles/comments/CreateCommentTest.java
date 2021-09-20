@@ -24,10 +24,10 @@ public class CreateCommentTest extends Base {
         commentsEndPoint = new CommentsEndPoint(token);
         commentsEndPoint.createComment(articleId, payload);
 
-        Assert.assertTrue(commentsEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(commentsEndPoint.verifyStatusCode(200), "status code failed");
         softAssert = new SoftAssert();
-        softAssert.assertTrue(commentsEndPoint.getResponseTime() < 8000L);
-        softAssert.assertTrue(commentsEndPoint.verifySchema(schemaJsonPath));
+        softAssert.assertTrue(commentsEndPoint.getResponseTime() < 8000L, "response time too long");
+        softAssert.assertTrue(commentsEndPoint.verifySchema(schemaJsonPath), "schema validation failed");
         softAssert.assertAll();
     }
 

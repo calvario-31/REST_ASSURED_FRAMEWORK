@@ -17,10 +17,10 @@ public class GetTagsTest extends Base {
         tagsEndPoint = new TagsEndPoint();
         tagsEndPoint.getTags();
 
-        Assert.assertTrue(tagsEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(tagsEndPoint.verifyStatusCode(200), "status code failed");
         softAssert = new SoftAssert();
-        softAssert.assertTrue(tagsEndPoint.getResponseTime() < 12000L);
-        softAssert.assertTrue(tagsEndPoint.verifySchema(schemaJsonPath));
+        softAssert.assertTrue(tagsEndPoint.getResponseTime() < 12000L, "response time too long");
+        softAssert.assertTrue(tagsEndPoint.verifySchema(schemaJsonPath), "schema validation failed");
         softAssert.assertAll();
     }
 

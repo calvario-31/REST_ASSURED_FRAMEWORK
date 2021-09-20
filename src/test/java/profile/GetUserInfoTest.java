@@ -23,10 +23,10 @@ public class GetUserInfoTest extends Base {
         profileEndPoint = new ProfileEndPoint(token);
         profileEndPoint.getUserInfo(usernameToGetInfo);
 
-        Assert.assertTrue(profileEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(profileEndPoint.verifyStatusCode(200), "status code failed");
         softAssert = new SoftAssert();
-        softAssert.assertTrue(profileEndPoint.getResponseTime() < 12000L);
-        softAssert.assertTrue(profileEndPoint.verifySchema(schemaJsonPath));
+        softAssert.assertTrue(profileEndPoint.getResponseTime() < 12000L, "response time too long");
+        softAssert.assertTrue(profileEndPoint.verifySchema(schemaJsonPath), "schema validation failed");
         softAssert.assertAll();
     }
 

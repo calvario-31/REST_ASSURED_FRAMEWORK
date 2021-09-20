@@ -21,10 +21,10 @@ public class CreateArticleTest extends Base {
         articlesEndPoint = new ArticlesEndPoint(token);
         articlesEndPoint.createArticle(payload);
 
-        Assert.assertTrue(articlesEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(articlesEndPoint.verifyStatusCode(200), "status code failed");
         softAssert = new SoftAssert();
-        softAssert.assertTrue(articlesEndPoint.getResponseTime() < 8000L);
-        softAssert.assertTrue(articlesEndPoint.verifySchema(schemaJsonPath));
+        softAssert.assertTrue(articlesEndPoint.getResponseTime() < 8000L, "response time too long");
+        softAssert.assertTrue(articlesEndPoint.verifySchema(schemaJsonPath), "schema validation failed");
         softAssert.assertAll();
     }
 

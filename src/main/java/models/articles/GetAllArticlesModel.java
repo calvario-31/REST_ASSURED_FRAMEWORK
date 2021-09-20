@@ -3,8 +3,8 @@ package models.articles;
 import java.util.List;
 
 public class GetAllArticlesModel {
-    private List<ArticleResponseModel> articles;
     public int articlesCount;
+    private List<ArticleResponseModel> articles;
 
     public GetAllArticlesModel() {
     }

@@ -18,9 +18,9 @@ public class GetAllArticlesTest extends Base {
         articlesEndPoint = new ArticlesEndPoint(token);
         articlesEndPoint.getAllArticles();
 
-        Assert.assertTrue(articlesEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(articlesEndPoint.verifyStatusCode(200), "status code failed");
         softAssert = new SoftAssert();
-        softAssert.assertTrue(articlesEndPoint.getResponseTime() < 8000L);
+        softAssert.assertTrue(articlesEndPoint.getResponseTime() < 8000L, "response time too long");
         softAssert.assertAll();
     }
 }

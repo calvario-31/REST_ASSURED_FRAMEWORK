@@ -23,17 +23,17 @@ public class ProfileEndToEndTest extends Base {
         profileEndPoint = new ProfileEndPoint(token);
         profileEndPoint.getUserInfo(usernameToFollow);
 
-        Assert.assertTrue(profileEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(profileEndPoint.verifyStatusCode(200), "status code failed");
 
         followUserEndPoint = new FollowUserEndPoint(token);
         profileResponse = followUserEndPoint.followUser(usernameToFollow);
 
-        Assert.assertTrue(followUserEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(followUserEndPoint.verifyStatusCode(200), "status code failed");
         Assert.assertTrue(profileResponse.isFollowing());
 
         profileResponse = followUserEndPoint.unfollowUser(usernameToFollow);
 
-        Assert.assertTrue(followUserEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(followUserEndPoint.verifyStatusCode(200), "status code failed");
         Assert.assertFalse(profileResponse.isFollowing());
 
     }

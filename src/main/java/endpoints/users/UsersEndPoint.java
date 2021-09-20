@@ -2,9 +2,7 @@ package endpoints.users;
 
 import endpoints.EndPoint;
 import models.users.UserResponseModel;
-import org.testng.Assert;
 import utilities.Log;
-import utilities.endpointhelpers.JsonPayloadProvider;
 
 public class UsersEndPoint extends EndPoint {
     private final String registerPath = "users";

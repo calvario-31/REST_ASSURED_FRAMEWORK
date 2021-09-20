@@ -22,9 +22,9 @@ public class DeleteCommentTest extends Base {
         commentsEndPoint = new CommentsEndPoint(token);
         commentsEndPoint.deleteComment(articleId, commentId);
 
-        Assert.assertTrue(commentsEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(commentsEndPoint.verifyStatusCode(200), "status code failed");
         softAssert = new SoftAssert();
-        softAssert.assertTrue(commentsEndPoint.getResponseTime() < 8000L);
+        softAssert.assertTrue(commentsEndPoint.getResponseTime() < 8000L, "response time too long");
         softAssert.assertAll();
     }
 }

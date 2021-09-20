@@ -25,11 +25,11 @@ public class FavoriteArticleTest extends Base {
         favoriteEndPoint = new FavoriteEndPoint(token);
         articleResponse = favoriteEndPoint.favoriteArticle(articleId);
 
-        Assert.assertTrue(favoriteEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(favoriteEndPoint.verifyStatusCode(200), "status code failed");
         softAssert = new SoftAssert();
-        softAssert.assertTrue(favoriteEndPoint.getResponseTime() < 8000L);
-        softAssert.assertTrue(favoriteEndPoint.verifySchema(schemaJsonPath));
-        softAssert.assertEquals(articleResponse.getFavoritesCount(), 1);
+        softAssert.assertTrue(favoriteEndPoint.getResponseTime() < 8000L, "response time too long");
+        softAssert.assertTrue(favoriteEndPoint.verifySchema(schemaJsonPath), "schema validation failed");
+        softAssert.assertEquals(articleResponse.getFavoritesCount(), 1, "favorite count failed");
         softAssert.assertAll();
     }
 

@@ -20,17 +20,17 @@ public class GetAllCommentTest extends Base {
         token = commons.generateNewUser().getToken();
         articleId = commons.generateNewArticle(token).getSlug();
 
-        for(int i =0; i<10; i++) {
+        for (int i = 0; i < 10; i++) {
             commons.generateComment(token, articleId);
         }
 
         commentsEndPoint = new CommentsEndPoint(token);
         commentsEndPoint.getComments(articleId);
 
-        Assert.assertTrue(commentsEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(commentsEndPoint.verifyStatusCode(200), "status code failed");
         softAssert = new SoftAssert();
-        softAssert.assertTrue(commentsEndPoint.getResponseTime() < 8000L);
-        softAssert.assertTrue(commentsEndPoint.verifySchema(schemaJsonPath));
+        softAssert.assertTrue(commentsEndPoint.getResponseTime() < 8000L, "response time too long");
+        softAssert.assertTrue(commentsEndPoint.verifySchema(schemaJsonPath), "schema validation failed");
         softAssert.assertAll();
     }
 

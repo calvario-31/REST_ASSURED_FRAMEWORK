@@ -33,7 +33,6 @@ public abstract class EndPoint {
 
     public EndPoint() {
         assignLog();
-        createNewRequest();
     }
 
     public EndPoint(String token) {

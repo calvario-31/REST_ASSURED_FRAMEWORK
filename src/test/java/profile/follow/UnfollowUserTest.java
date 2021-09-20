@@ -26,10 +26,10 @@ public class UnfollowUserTest extends Base {
         followUserEndPoint.followUser(usernameToUnfollow);
         profileResponse = followUserEndPoint.unfollowUser(usernameToUnfollow);
 
-        Assert.assertTrue(followUserEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(followUserEndPoint.verifyStatusCode(200), "status code failed");
         softAssert = new SoftAssert();
-        softAssert.assertTrue(followUserEndPoint.getResponseTime() < 12000L);
-        softAssert.assertTrue(followUserEndPoint.verifySchema(schemaJsonPath));
+        softAssert.assertTrue(followUserEndPoint.getResponseTime() < 12000L, "response time too long");
+        softAssert.assertTrue(followUserEndPoint.verifySchema(schemaJsonPath), "schema validation failed");
         softAssert.assertFalse(profileResponse.isFollowing());
         softAssert.assertAll();
     }

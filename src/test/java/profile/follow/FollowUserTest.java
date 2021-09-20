@@ -25,11 +25,11 @@ public class FollowUserTest extends Base {
         followUserEndPoint = new FollowUserEndPoint(token);
         profileResponse = followUserEndPoint.followUser(usernameToFollow);
 
-        Assert.assertTrue(followUserEndPoint.verifyStatusCode(200));
+        Assert.assertTrue(followUserEndPoint.verifyStatusCode(200), "status code failed");
         softAssert = new SoftAssert();
-        softAssert.assertTrue(profileResponse.isFollowing());
-        softAssert.assertTrue(followUserEndPoint.getResponseTime() < 12000L);
-        softAssert.assertTrue(followUserEndPoint.verifySchema(schemaJsonPath));
+        softAssert.assertTrue(profileResponse.isFollowing(), "following boolean failed");
+        softAssert.assertTrue(followUserEndPoint.getResponseTime() < 12000L, "response time too long");
+        softAssert.assertTrue(followUserEndPoint.verifySchema(schemaJsonPath), "schema validation failed");
         softAssert.assertAll();
     }
 
